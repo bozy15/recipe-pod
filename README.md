@@ -137,9 +137,40 @@ All testing of this project can be found [**here**](testing.md) on a separate fi
 
 ## Deployment
 
+### Requirements for deployment
+- A GitHub account.
+- A Heroku account.
+- Knowledge of the Python programming language.
+- A MongoDB account and database.
+
+### Deploy on Heroku
+
+- login to [Heroku](https://www.heroku.com/).
+- Click on "New" and select "Create new app"
+- Enter the name of the app and click "Create".
+- Select the region nearest to you.
+- Click on the Connect to GitHub button.
+- Search for the name of the repository.
+- Click on the repository and select "Add to app".
+- Go to the settings and click on Config Vars.
+- Enter the variables in your env.py file in the text boxes.
+- Enable the automatic deployment
+- Click on "Deploy" and select "Deploy to Heroku".
+- The app will be deployed to Heroku.
+
+
 This project was developed using [VScode](https://code.visualstudio.com/), committed to [git](https://git-scm.com/) and pushed to [GitHub](https://github.com/).
 
-### How to run this project locally
+### How to clone this repository
+
+- Login to [GitHub](https://github.com/)
+- Fork this repository.
+- Click on **code** under Settings button.
+- choose HTTPS,SSH or GitHub CLI, then click the copy button.
+- Open Git Bash and paste the link into the command line.
+- Type **git clone** and press enter.
+- The repository will be cloned to your computer.
+
 
 ## Credits
 
