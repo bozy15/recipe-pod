@@ -82,17 +82,17 @@ This developers goals:
 
 
 
-### Design
+## Design
 
-#### Color choice
+### Color choice
 
 - 
 
-#### Typography
+### Typography
 
-#### Images
+### Images
 
-#### Database 
+### Database 
 
 MongoDB is used to store the data for this website. The data has been set in 3 collections which can be seen in the image below.
 <div align="center">
@@ -148,6 +148,8 @@ This project was developed using [VScode](https://code.visualstudio.com/), commi
 #### Images
 
 ### Code
+
+- The secret key used in this project was generated using [Randon key Gen](https://randomkeygen.com/)
 
 #### Educational Credit
 
