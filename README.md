@@ -137,6 +137,8 @@ All testing of this project can be found [**here**](testing.md) on a separate fi
 
 ## Deployment
 
+This project was developed using [VScode](https://code.visualstudio.com/), committed to [git](https://git-scm.com/) and pushed to [GitHub](https://github.com/).
+
 ### Requirements for deployment
 - A GitHub account.
 - A Heroku account.
@@ -145,7 +147,7 @@ All testing of this project can be found [**here**](testing.md) on a separate fi
 
 ### Deploy on Heroku
 
-- login to [Heroku](https://www.heroku.com/).
+- Login to [Heroku](https://www.heroku.com/).
 - Click on "New" and select "Create new app"
 - Enter the name of the app and click "Create".
 - Select the region nearest to you.
@@ -157,9 +159,6 @@ All testing of this project can be found [**here**](testing.md) on a separate fi
 - Enable the automatic deployment
 - Click on "Deploy" and select "Deploy to Heroku".
 - The app will be deployed to Heroku.
-
-
-This project was developed using [VScode](https://code.visualstudio.com/), committed to [git](https://git-scm.com/) and pushed to [GitHub](https://github.com/).
 
 ### How to clone this repository
 
@@ -180,7 +179,7 @@ This project was developed using [VScode](https://code.visualstudio.com/), commi
 
 ### Code
 
-- The secret key used in this project was generated using [Randon key Gen](https://randomkeygen.com/)
+- The secret key used in this project was generated using [Random key Gen](https://randomkeygen.com/)
 
 #### Educational Credit
 
