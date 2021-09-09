@@ -2,7 +2,7 @@
 
 View the live site [here]()
 
-This is a site built for people who want to share their favourite recipes with others. It is a simple, easy to use, and free to use site. It is design to be responsive on a wide range of devices.
+This is a site built for people who want to share their favorite recipes with others. It is a simple, easy to use, and free to use site. It is designed to be responsive on a wide range of devices.
 
 __Image of the site__
 
@@ -12,7 +12,7 @@ __Image of the site__
 
    - [**Project Goals**](#project-goals)
    - [**User Stories**](#user-stories)
-   - [**Developers goals**](#developer-goals)s  
+   - [**Developers goals**](#developer-goals)  
    - [**Design**](#design)
    - [**Wireframes**](#wireframes)
 
@@ -88,7 +88,7 @@ This developers goals:
 
 The wireframes were created using [Balsamiq](https://balsamiq.com/) during the design process of this project.
 
-- Wireframes for this project can be found [**here**]()
+- Wireframes for this project can be found [**here**](static\wireframes.pdf)
 
 ## Features
 
