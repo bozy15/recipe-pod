@@ -84,11 +84,28 @@ This developers goals:
 
 ### Design
 
+#### Color choice
+
+- 
+
+#### Typography
+
+#### Images
+
+#### Database 
+
+MongoDB is used to store the data for this website. The data has been set in 3 collections which can be seen in the image below.
+<div align="center">
+<img src="static/docs/mongodb_diagram.png" alt="image of the mondodb database design" width="550"/>
+</div>
+
+####
+
 ### Wireframes
 
 The wireframes were created using [Balsamiq](https://balsamiq.com/) during the design process of this project.
 
-- Wireframes for this project can be found [**here**](static/wireframes.pdf)
+- Wireframes for this project can be found [**here**](static/docs/wireframes.pdf)
 
 ## Features
 
