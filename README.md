@@ -88,7 +88,7 @@ This developers goals:
 
 The wireframes were created using [Balsamiq](https://balsamiq.com/) during the design process of this project.
 
-- Wireframes for this project can be found [**here**](static\wireframes.pdf)
+- Wireframes for this project can be found [**here**](static/wireframes.pdf)
 
 ## Features
 
