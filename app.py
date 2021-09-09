@@ -12,7 +12,7 @@ if os.path.exists("env.py"):
 # creates instance of Flask app
 app = Flask(__name__)
 
-
+# Proof of concept
 @app.route('/')
 def hello():
     return "Hello World!"
