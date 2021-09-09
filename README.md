@@ -137,7 +137,7 @@ All testing of this project can be found [**here**](testing.md) on a separate fi
 
 ## Deployment
 
-This project was developed using [VScode](https://code.visualstudio.com/), committed to [git](https://git-scm.com/) and pushed to [GitHub](https://github.com/).
+This project was developed using [VScode](https://code.visualstudio.com/), committed to [Git](https://git-scm.com/) and pushed to [GitHub](https://github.com/).
 
 ### Requirements for deployment
 - A GitHub account.

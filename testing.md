@@ -1,6 +1,6 @@
-# Whacka-mole - Testing section
+# RecipePod - Testing section
 
-[Main README.md file for whacka-mole](README.md)
+[Main README.md file for RecipePod](README.md)
 
 ## Table of Contents
 
