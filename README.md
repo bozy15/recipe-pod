@@ -4,7 +4,7 @@ View the live site [here]()
 
 This is a site built for people who want to share their favorite recipes with others. It is a simple, easy to use, and free to use site. It is designed to be responsive on a wide range of devices.
 
-__Image of the site__
+*Image of the site*
 
 ## Table of Contents
 
@@ -86,7 +86,15 @@ This developers goals:
 
 ### Color choice
 
-- 
+- The colors chosen were:
+	<div align="center">
+		<img src="static/images/color-palette.png" />
+	</div>
+
+	- The colors were chosen to be consistent with the color scheme of the [**Material Design**](https://material.io/guidelines/style/color.html)
+
+	- The vivid orange stands out against the light blue background when paired together. These two primary colors are used to give the site a fresh and vibrant feel to help the recipes seem more appealing.
+
 
 ### Typography
 
@@ -175,11 +183,15 @@ This project was developed using [VScode](https://code.visualstudio.com/), commi
 
 ### Media
 
+- The color palette used for this project can be found [**here**](https://www.shutterstock.com/blog/color-palettes-for-websites).
+
 #### Images
 
 ### Code
 
 - The secret key used in this project was generated using [Random key Gen](https://randomkeygen.com/)
+- The code used for the navigation bar was created using [Materialize](https://materializecss.com/navbar.html) as a base template and then edited to fit the needs of this project.
+
 
 #### Educational Credit
 

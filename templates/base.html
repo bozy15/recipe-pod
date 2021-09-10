@@ -2,9 +2,14 @@
 <html lang="en">
 
 <head>
+    <!-- Metas -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Food, drink, recipe, dinner, lunch, breakfast, make your own recipe, cocktail recipe, 
+        dinner recipe, dessert, alcohol, non-alcoholic, vegan, vegetarian, meat, soup, pasta">
+    <meta name="description"
+        content="RecipePod is a place for people who want to create, share, and edit their favorite food and beverage recipes.">
     <!-- FontAwesome v5.15.4: https://cdnjs.com/libraries/font-awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
@@ -20,19 +25,65 @@
 </head>
 
 <body>
-    {% block content %}
-    {% endblock %}
+    <header>
+        <!-- Main Navbar -->
+        <nav class="nav-extended text-shadow">
+            <div class="nav-wrapper">
+                <a href="{{ url_for('home') }}" class="brand-logo">RecipePod</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+                <ul class="right hide-on-med-and-down">
+                    <!-- Home -->
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <!-- Recipes -->
+                    <li><a href="">Recipes</a></li>
+                    <!-- Profile -->
+                    <li><a href="">Profile</a></li>
+                    <!-- Manage Categories -->
+                    <li><a href="">Manage Categories</a></li>
+                    <!-- Login -->
+                    <li><a href="">Login</a></li>
+                    <!-- Sign Up -->
+                    <li><a href="">Register</a></li>
+                    <!-- Logout -->
+                    <li><a href="">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- End Main Navbar -->
+        <!-- Mobile sidenav -->
+        <ul class="sidenav text-shadow" id="mobile-demo">
+            <h4 class="center-align grey-text text-lighten-4 text-shadow">RecipePod</h4>
+            <!-- Home -->
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <!-- Recipes -->
+            <li><a href="">Recipes</a></li>
+            <!-- Profile -->
+            <li><a href="">Profile</a></li>
+            <!-- Manage Categories -->
+            <li><a href="">Manage Categories</a></li>
+            <!-- Login -->
+            <li><a href="">Login</a></li>
+            <!-- Sign Up -->
+            <li><a href="">Register</a></li>
+            <!-- Logout -->
+            <li><a href="">Logout</a></li>
+        </ul>
+    </header>
+</body>
+<!-- End Mobile sidenav -->
+{% block content %}
+{% endblock %}
 
-    <!-- jQuery v3.6.0: https://code.jquery.com/ -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- Materialize JS Script: https://materializecss.com/getting-started.html -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <!-- Custom JS file -->
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
-    <!-- jinja block to add any custom JS from child templates -->
-    {% block scripts %}
-    {% endblock %}
+<!-- jQuery v3.6.0: https://code.jquery.com/ -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!-- Materialize JS Script: https://materializecss.com/getting-started.html -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!-- Custom JS file -->
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<!-- jinja block to add any custom JS from child templates -->
+{% block scripts %}
+{% endblock %}
 
 </body>
 
