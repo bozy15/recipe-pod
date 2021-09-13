@@ -28,6 +28,7 @@ nav .brand-logo {
   margin: 0 0 0 1rem;
 }
 /* ---END OF BASE.HTML CSS --- */
+
 /* --- INDEX.HTML CSS --- */
 /* Hero image */
 .hero-image {
@@ -39,4 +40,12 @@ nav .brand-logo {
 /* Search Bar */
 .input-field.col.s12.m8 {
   margin-inline-start: 8.5rem; /* centers the search bar on medium and large screens*/
+}
+/* --- END OF INDEX.HTML CSS --- */
+
+/* --- REGISTER.HTML CSS --- */
+/* Register button */
+.register-btn.col.s12.btn.text-shadow {
+  width: 50%;   /* centers the register button */
+  margin-inline-start: 25%;
 }
