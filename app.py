@@ -36,6 +36,9 @@ def recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
+# Recipe for the login page
+
+
 # Route for the registration page
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -63,6 +66,20 @@ def register():
         return redirect(url_for("profile", username=session["user"]))
 
     return render_template("register.html")
+
+
+# Route for the Profile page
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    # Grabs the session users's username from the database
+    username = mongo.db.users.find_one({"username": session["user"]})["username"]
+
+    # If the user is logged in, show their profile
+    # otherwise redirect to the login page
+    if session["user"]:
+        return render_template("profile.html", username=username)
+
+    return redirect(url_for("login"))
 
 
 # Tells App where to run

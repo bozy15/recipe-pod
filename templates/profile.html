@@ -1,0 +1,63 @@
+<!-- Extends "base.html" -->
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Username display -->
+<div class="row">
+    <col class="s12">
+        <h1 class="center-align">
+            {{ username }}'s Profile
+        </h1>
+    </col>
+</div>
+<!-- End of Username display -->
+<!-- Display the users recipes -->
+<div class="row">
+    <div class="col s12">
+        <h3 class="center-align">My Recipes</h3>
+    </div>
+</div>
+<!-- End of Users displayed recipes -->
+<!-- Add Recipe button -->
+<div class="row col s12 center-align">
+    <a class="waves-effect waves-light btn" href="#add-recipe">Add Recipe</a>
+</div>
+<!-- End of recipe button -->
+<!-- Users recipes -->
+<section>
+    <div class="container">
+        <div class="row">
+            <!-- If the user has no recipes display this message -->
+            {% if recipes|length == 0 %}
+                <div class="col s12 center-align">
+                    <p>Doesn't look like you have uploaded any recipes yet.</p>
+                    <p>Whenever you feel ready just hit the button above!</p>
+                </div>
+            {% else %}
+                <!-- Loops through recipes -->
+                {% for recipe in recipes %}
+                    <div class="col s12 m6 l4">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
+                                <span class="card-title">{{ recipe.category_name}}</span>
+                            </div>
+                            <div class="card-content center-align">
+                                <h3>{{ recipe.recipe_name }}</h3>
+                                <span>Created By: {{ recipe.created_by }}</span>
+                            </div>
+                            <div class="card-action center-align">
+                                <a href="#full-recipe" class="btn waves-effect waves-light text-shadow">
+                                    <i class="fas fa-eye left"></i>
+                                    See Recipe
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>
+<!-- End of users recipes -->
+{% endblock %}

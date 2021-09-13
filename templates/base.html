@@ -37,7 +37,7 @@
                     <!-- Recipes -->
                     <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
                     <!-- Profile -->
-                    <li><a href="">Profile</a></li>
+                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                     <!-- Manage Categories -->
                     <li><a href="">Manage Categories</a></li>
                     <!-- Login -->
@@ -58,7 +58,7 @@
             <!-- Recipes -->
             <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
             <!-- Profile -->
-            <li><a href="">Profile</a></li>
+            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
             <!-- Manage Categories -->
             <li><a href="">Manage Categories</a></li>
             <!-- Login -->
