@@ -1,4 +1,52 @@
 <!-- Extends file to base.html -->
 {% extends "base.html" %}
 {% block content %}
+<!-- Hero Image -->
+<section class="hero-image">
+    <div class="hero-body row">
+        <div class="col s12 m6 offset-m6 l6 offset-l6">
+            <h1 class="hero-header text-shadow">Home to everyones favorite food and beverage recipes!</h1>
+        </div>
+</section>
+<!-- End Hero Image -->
+<!-- Info card -->
+<section class="container">
+    <div class="row">
+        <div class="col l12 m12">
+            <card>
+                <div class="card-content card-panel center-align text-shadow">
+                    <p>Love cooking amazing food you want to share with world!</p>
+                    <p>In the mood to craft a cracking cocktail?</p>
+                    <p>Search our recipes below and find the perfect recipe for you!</p>
+                    <!-- Customized Materialize search bar: https://materializecss.com/navbar.html  -->
+                    <div class="row">
+                        <form action="#search" method="post" class="col s12">
+                            <div class="valign-wrapper center-align">
+                                <div class="input-field col s12 m8">
+                                    <i class="fas fa-search prefix white-text"></i>
+                                    <input type="text" name="query" id="query" class="validate">
+                                    <label for="query">Search Recipes</label>
+                                </div>
+                            </div>
+                            <div class="col s12 m12 l12">
+                                <button type="submit" class=" btn text-shadow">
+                                    <i class="fas fa-search left"></i>
+                                    Search
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- End of search bar -->
+                    <p>Love what you see here and want to share your amazing recipes too?</p>
+                    <p>Sign up and start sharing your recipes with the world!</p>
+                    <!-- CTA button -->
+                    <div class="card-action">
+                        <a class="btn" href="#register">Sign Up</a>
+                    </div>
+                </div>
+            </card>
+        </div>
+    </div>
+</section>
+<!-- End Info card -->
 {% endblock %}
