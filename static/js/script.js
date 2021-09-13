@@ -12,7 +12,10 @@ $(document).ready(function () {
   // Add another input field for the user to add a new ingredient
   $("#new_ingredient").click(function () {
     $("#ingredient_list").append(
-      '<div class="input-field col s8"><input id="ingredient" type="text" class="validate"><label for="ingredient">Ingredient</label></div>'
+      `<div class="input-field col s8">
+          <input id="ingredients" type="text" name="ingredients" minlength="3" class="validate" required>
+          <label for="ingredients">Ingredient</label>
+      </div>`
     );
   });
 });

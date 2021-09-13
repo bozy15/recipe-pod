@@ -117,8 +117,8 @@ def add_recipes():
             "recipe_name": request.form.get("recipe_name"),
             "category": request.form.get("category_name"),
             "image_url": request.form.get("image_url"),
-            "ingredients": request.form.get("ingredients"),
-            "method": request.form.get("method"),
+            "ingredients": request.form.getlist("ingredients"),
+            "method": request.form.getlist("method"),
             "prep_time": request.form.get("prep_time"),
             "serves": request.form.get("serves"),
             "created_by": session["user"]
