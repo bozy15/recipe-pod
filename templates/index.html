@@ -1,4 +1,4 @@
-<!-- Extends file to base.html -->
+<!-- Extends base.html -->
 {% extends "base.html" %}
 {% block content %}
 <!-- Hero Image -->
@@ -24,12 +24,12 @@
                             <div class="valign-wrapper center-align">
                                 <div class="input-field col s12 m8">
                                     <i class="fas fa-search prefix white-text"></i>
-                                    <input type="text" name="query" id="query" class="validate">
+                                    <input type="text" name="query" id="query" minlength="3" class="validate" required>
                                     <label for="query">Search Recipes</label>
                                 </div>
                             </div>
                             <div class="col s12 m12 l12">
-                                <button type="submit" class=" btn text-shadow">
+                                <button type="submit" class="waves-effect waves-light btn text-shadow">
                                     <i class="fas fa-search left"></i>
                                     Search
                                 </button>
