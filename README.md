@@ -187,6 +187,8 @@ This project was developed using [VScode](https://code.visualstudio.com/), commi
 
 #### Images
 
+- The Hero image for this project can be found [**here**](https://unsplash.com/photos/rD3YrnhTmf0) and was created by Ella Olsson.
+
 ### Code
 
 - The secret key used in this project was generated using [Random key Gen](https://randomkeygen.com/)
