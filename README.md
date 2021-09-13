@@ -192,8 +192,10 @@ This project was developed using [VScode](https://code.visualstudio.com/), commi
 ### Code
 
 - The secret key used in this project was generated using [Random key Gen](https://randomkeygen.com/)
+
 - The code used for the navigation bar was created using [Materialize](https://materializecss.com/navbar.html) as a base template and then edited to fit the needs of this project.
 
+- The code used to template the registration form both in the **app.py** and **register.html** was based around Code Institute's [Task Manager project](https://www.youtube.com/watch?v=Sfkg3358Igc) and modified to this projects needs.
 
 #### Educational Credit
 
