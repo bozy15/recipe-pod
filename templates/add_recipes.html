@@ -1,0 +1,120 @@
+<!-- Extends "base.html" -->
+{% extends "base.html" %}
+{% block content %}
+    <!-- Heading -->
+    <div class="row">
+        <div class="col s12">
+            <h3 class="center-align">Add a Recipe</h3>
+        </div>
+    </div>
+    <!-- Add Recipe form -->
+    <section class="valign-wrapper">
+        <div class="row">
+            <form class="col s12 text-shadow" action="{{ url_for('add_recipes') }}" method="POST">
+                <div class="card-panel">
+                    <!-- Recipe category dropdown -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-folder-open prefix"></i>
+                            <select name="category_name" id="category_name" class="validate" required>
+                                <option value="" disabled selected>Choose category</option>
+                                <!-- For loop that generates the options -->
+                                {% for category in categories %}   
+                                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                {% endfor %}
+                            </select>
+                            <label for="category_name">Recipe Category</label>
+                        </div>
+                    </div>
+                    <!-- End of dropdown -->
+                    <!-- Recipe name input -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-pencil-alt prefix"></i>
+                            <input type="text" id="recipe_name" name="recipe_name" minlength="4" maxlength="30"
+                                class="validate" required>
+                            <label for="recipe_name">Recipe's Name</label>
+                        </div>
+                    </div>
+                    <!-- End of Recipe name input -->
+                    <!-- Recipe image URL link -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-link prefix"></i>
+                            <input type="url" id="image_url" name="image_url" class="validate" required>
+                            <label for="image_url">Recipe's Image URL</label>
+                        </div>
+                    </div>
+                    <!-- End of Recipe image URL link -->
+                    <!-- Time to make -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-clock prefix"></i>
+                            <input type="text" id="prep_time" name="prep_time" class="validate"
+                                required>
+                            <label for="prep_time">Time to make</label>
+                        </div>
+                    </div>
+                    <!-- End of time to make -->
+                    <!-- Serves -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-users prefix"></i>
+                            <input type="text" id="serves" name="serves" class="validate" required>
+                            <label for="serves">Serves</label>
+                        </div>
+                    </div>
+                    <!-- End of Serves -->
+                    <!-- Ingredients -->
+                    <div id="ingredient_list" class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-list prefix"></i>
+                            <input type="text" id="ingredients" name="ingredients" class="validate" minlength="4" maxlength="500" required />
+                            <label for="ingredients">Ingredients</label>
+                        </div>
+                    </div>
+                    <!-- Add a New Ingredient -->
+                    <div class="row">
+                        <div class="right-align col s12">
+                            <i class="fas fa-plus-circle prefix"></i>
+                            <a href="#" id="new_ingredient" class="btn wave-effect waves-light text-shadow">Add Another
+                                Ingredient</a>
+                        </div>
+                    </div>
+                    <!-- End of Ingredients -->
+                    <!-- Method -->
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="fas fa-list-ol prefix"></i>
+                            <textarea name="method" id="method" rows="2" class="materialize-textarea validate" minlength="3"
+                                maxlength="300" required></textarea>
+                            <label for="method">Method</label>
+                        </div>
+                    </div>
+                    <!-- Add another step -->
+                    <div class="row">
+                        <div class="right-align col s12">
+                            <i class="fas fa-plus-circle prefix"></i>
+                            <a href="#" id="new_step" class="btn wave-effect waves-light text-shadow">Add Another Step</a>
+                        </div>
+                    </div>
+                    <!-- End of Method -->
+                    <!-- Reset button -->
+                    <div class="row valign-wrapper">
+                        <div class="col s12">
+                            <a href="{{ url_for('add_recipes') }}" class="btn red text-shadow">Reset</a>
+                        </div>
+                        <!-- Add Recipe button -->
+                        <div class="col s12 center-align">
+                            <button class="btn green text-shadow" type="submit" name="add_recipe">Add Recipe</button>
+                        </div>
+                    </div>
+
+                    <!-- End of reset button -->
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- End of recipe form -->
+    <!-- End of heading -->
+{% endblock %}

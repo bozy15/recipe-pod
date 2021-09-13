@@ -43,10 +43,11 @@ def login():
         # Checks if the username is in the database
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-        
+
         # If the username is in the database, check if the password is correct
         if existing_user:
-            if check_password_hash(existing_user["password"], request.form.get("password")):
+            if check_password_hash(existing_user["password"],
+                                   request.form.get("password")):
                 # If the password is correct, set the session to the username
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
@@ -94,7 +95,8 @@ def register():
 @app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # Grabs the session users's username from the database
-    username = mongo.db.users.find_one({"username": session["user"]})["username"]
+    username = mongo.db.users.find_one({"username":
+                                        session["user"]})["username"]
 
     # If the user is logged in, show their profile
     # otherwise redirect to the login page
@@ -102,6 +104,32 @@ def profile(username):
         return render_template("profile.html", username=username)
 
     return redirect(url_for("login"))
+
+
+# Route for the logging out
+
+
+# Route for adding a recipe
+@app.route("/add_recipes", methods=["GET", "POST"])
+def add_recipes():
+    if request.method == "POST":
+        recipe = {
+            "recipe_name": request.form.get("recipe_name"),
+            "category": request.form.get("category_name"),
+            "image_url": request.form.get("image_url"),
+            "ingredients": request.form.get("ingredients"),
+            "method": request.form.get("method"),
+            "prep_time": request.form.get("prep_time"),
+            "serves": request.form.get("serves"),
+            "created_by": session["user"]
+        }
+        # Inserts the recipe into the database
+        mongo.db.recipes.insert_one(recipe)
+        flash("Recipe added")
+        return redirect(url_for("recipes"))
+
+    categories = mongo.db.categories.find().sort("name", 1)
+    return render_template("add_recipes.html", categories=categories)
 
 
 # Tells App where to run
