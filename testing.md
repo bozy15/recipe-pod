@@ -46,16 +46,35 @@ These were the validation services use to check the projects code.
     <img src="static/images/bug1.png">
     </div>
 
-    * This was easily fixed by changing the category key to category_name.
+* This was easily fixed by changing the category key to category_name.
 
     <div align="center">
     <img src="static/images/bug1-fix.png">
     </div>
 
-    * Test: The user can now see the recipe's category name when on the recipe page.
+* Test: The user can now see the recipe's category name when on the recipe page.
 
     <div align="center">
     <img src="static/images/bug1-fix2.png">
+    </div>
+
+**Bug 2**
+- Description: **The navbar was being covered by the page content**
+
+    <div align="center">
+    <img src="static/images/bug2.png">
+    </div>
+
+* Fix: The bug was resolved by adding a z-index of 5 to ensure there would be no overlap.
+
+    <div align="center">
+    <img src="static/images/bug2-fix.png">
+    </div>
+
+* Test: The navbar is no longer covered by the page content.
+
+    <div align="center">
+    <img src="static/images/bug2-fix2.png">
     </div>
 
 #### Unsolved Bugs

@@ -9,6 +9,10 @@ body {
 
 /* --- BASE.HTML CSS --- */
 /* Navbar */
+nav.nav-extended {
+  z-index: 5; /* Fix for navbar overlapping */
+}
+
 nav.nav-extended,
 ul.sidenav {
   position: fixed;
@@ -18,6 +22,8 @@ ul.sidenav {
 
 .sidenav li > a {
   color: #fff;
+  position: relative;
+  z-index: 3;
 }
 
 ul li:hover {
