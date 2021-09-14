@@ -39,6 +39,29 @@ These were the validation services use to check the projects code.
 
 #### Solved Bugs
 
+- 1. **Bug 1** 
+    - Description: **The user can't see the recipe's category name when on the recipe page**
+    * Fix: In the app.py file, within the the add_recipe view, the category_name key was incorrectly set to category.
+
+    <div align="center">
+    <img src="static/images/bug1.png">
+    </div>
+
+    * This was easily fixed by changing the category key to category_name.
+
+    <div align="center">
+    <img src="static/images/bug1-fix.png">
+    </div>
+
+    * Test: The user can now see the recipe's category name when on the recipe page.
+
+    <div align="center">
+    <img src="static/images/bug1-fix2.png">
+    </div>
+   
+
+
+
 
 #### Unsolved Bugs
 
