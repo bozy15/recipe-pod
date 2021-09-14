@@ -77,6 +77,23 @@ These were the validation services use to check the projects code.
     <img src="static/images/bug2-fix2.png">
     </div>
 
+**Bug 3** 
+- Description: **The User Can't see their recipes they uploaded on their profile**
+
+    <div align="center">
+    <img src="static/images/bug3.png">
+    </div>
+
+* Fix: The bug was resolved by changing `{"created_by": session["user"].capitalize()}` to `{"created_by": session["user"].lower()}`
+    - This was done because the session["user"] was being set to the capitalized version of the user's name. This was causing the user's name to be read incorrectly which made the code think the user hadn't created any recipes.
+
+* Test: The user can now see their recipes they uploaded on their profile.
+
+    <div align="center">
+    <img src="static/images/bug3-fix.png">
+    </div>
+
+
 #### Unsolved Bugs
 
 No noticed unresolved bugs during testing on all devices.
