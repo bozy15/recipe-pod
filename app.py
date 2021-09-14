@@ -48,9 +48,15 @@ def login():
         if existing_user:
             if check_password_hash(existing_user["password"],
                                    request.form.get("password")):
-                # If the password is correct, set the session to the username
                 session["user"] = request.form.get("username").lower()
-                flash("Welcome, {}".format(request.form.get("username")))
+                user = mongo.db.users.find_one(
+                    {"username": request.form.get("username").lower()})
+                # Check if the user is an admin
+                if user["is_admin"]:
+                    session["is_admin"] = True
+                else:
+                    session["is_admin"] = False
+                flash("Welcome back, {}".format(request.form.get("username")))
                 return redirect(url_for("profile", username=session["user"]))
             else:
                 flash("Incorrect username and/or password")

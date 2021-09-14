@@ -41,7 +41,7 @@
                         <!-- Profile -->
                         <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                         <!-- Only display this link if the user is the admin -->
-                        {% if session.user|lower == "admin"|lower %}
+                        {% if session.is_admin %}
                             <!-- Manage Categories -->
                             <li><a href="">Manage Categories</a></li>
                         {% endif %}
@@ -61,15 +61,15 @@
         <ul class="sidenav text-shadow" id="mobile-demo">
             <h4 class="center-align grey-text text-lighten-4 text-shadow">RecipePod</h4>
              <!-- Home -->
-             <li><a href="{{ url_for('home') }}">Home</a></li>
-             <!-- Only display these links if the user is logged in -->
+             <li><a href="{{ url_for('home') }}">Home</a></li>       
              <!-- Recipes -->
              <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+             <!-- Only display these links if the user is logged in -->
              {% if session.user %}
                  <!-- Profile -->
                  <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                  <!-- Only display this link if the user is the admin -->
-                 {% if session.user|lower == "admin"|lower %}
+                 {% if session.is_admin %}
                      <!-- Manage Categories -->
                      <li><a href="">Manage Categories</a></li>
                  {% endif %}
