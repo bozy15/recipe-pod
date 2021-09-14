@@ -76,9 +76,8 @@
                     <!-- Add a New Ingredient -->
                     <div class="row">
                         <div class="right-align col s12">
-                            <i class="fas fa-plus-circle prefix"></i>
                             <a href="#" id="new_ingredient" class="btn wave-effect waves-light text-shadow">Add Another
-                                Ingredient</a>
+                                Ingredient <i class="fas fa-plus-circle prefix"></i></a>
                         </div>
                     </div>
                     <!-- End of Ingredients -->
@@ -94,8 +93,8 @@
                     <!-- Add another step -->
                     <div class="row">
                         <div class="right-align col s12">
-                            <i class="fas fa-plus-circle prefix"></i>
-                            <a href="#" id="new_step" class="btn wave-effect waves-light text-shadow">Add Another Step</a>
+                            <a href="#" id="new_step" class="btn wave-effect waves-light text-shadow">Add Another Step <i
+                                    class="fas fa-plus-circle prefix"></i></a>
                         </div>
                     </div>
                     <!-- End of Method -->
@@ -104,13 +103,12 @@
                         <div class="col s12">
                             <a href="{{ url_for('add_recipes') }}" class="btn red text-shadow">Reset</a>
                         </div>
+                    <!-- End of reset button -->
                         <!-- Add Recipe button -->
                         <div class="col s12 center-align">
                             <button class="btn green text-shadow" type="submit" name="add_recipe">Add Recipe</button>
                         </div>
-                    </div>
-
-                    <!-- End of reset button -->
+                    </div>      
                 </div>
             </form>
         </div>

@@ -37,7 +37,7 @@ These were the validation services use to check the projects code.
 
 #### Solved Bugs
 
-**Bug 1** 
+#### **Bug 1** 
 - Description: **The user can't see the recipe's category name when on the recipe page** 
 
 * Fix: In the app.py file, within the the add_recipe view, the category_name key was incorrectly set to category.
@@ -58,7 +58,7 @@ These were the validation services use to check the projects code.
     <img src="static/images/bug1-fix2.png">
     </div>
 
-**Bug 2**
+#### **Bug 2**
 - Description: **The navbar was being covered by the page content**
 
     <div align="center">
@@ -77,7 +77,7 @@ These were the validation services use to check the projects code.
     <img src="static/images/bug2-fix2.png">
     </div>
 
-**Bug 3** 
+#### **Bug 3** 
 - Description: **The User Can't see their recipes they uploaded on their profile**
 
     <div align="center">

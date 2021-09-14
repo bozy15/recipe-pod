@@ -79,17 +79,16 @@
                             {% endif %}
                             <!-- If there is more than one ingredient -->
                             {% if loop.index != 1 %}
-                                <a href="#" id="remove_ingredient" class="text-shadow wave-effect waves-light btn red">Delete <i class="fas fa-trash"></i></a>
+                                <a href="#" id="remove_ingredient" class="text-shadow wave-effect waves-light btn red right">Delete <i class="fas fa-trash"></i></a>
                             {% endif %}
                         </div>
                         {% endfor %}
                     </div>
                     <!-- Add a New Ingredient -->
                     <div class="row">
-                        <div class="right-align col s12">
-                            <i class="fas fa-plus-circle prefix"></i>
+                        <div class="right-align col s12">         
                             <a href="#" id="new_ingredient" class="btn wave-effect waves-light text-shadow">Add Another
-                                Ingredient</a>
+                                Ingredient <i class="fas fa-plus-circle prefix"></i></a>
                         </div>
                     </div>
                     <!-- End of Ingredients -->
@@ -107,7 +106,8 @@
                                 {% endif %}
                                 <!-- If there is more than one method -->
                                 {% if loop.index != 1 %}
-                                    <a href="#" id="remove_method" class="text-shadow wave-effect waves-light btn red">Delete <i class="fas fa-trash"></i></a>
+                                    <a href="#" id="remove_method" class="text-shadow wave-effect waves-light btn red right">Delete <i
+                                            class="fas fa-trash"></i></a>
                                 {% endif %}
                             </div>
                         {% endfor %}
@@ -115,8 +115,8 @@
                     <!-- Add another step -->
                     <div class="row">
                         <div class="right-align col s12">
-                            <i class="fas fa-plus-circle prefix"></i>
-                            <a href="#" id="new_step" class="btn wave-effect waves-light text-shadow">Add Another Step</a>
+                            <a href="#" id="new_step" class="btn wave-effect waves-light text-shadow">Add Another Step <i
+                                    class="fas fa-plus-circle prefix"></i></a>
                         </div>
                     </div>
                     <!-- End of Method -->
