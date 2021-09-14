@@ -37,7 +37,7 @@ def recipes():
 
 
 # Route for the login page
-@app.route('/login')
+@app.route('/login', methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         # Checks if the username is in the database
@@ -107,6 +107,12 @@ def profile(username):
 
 
 # Route for the logging out
+@app.route("/logout")
+def logout():
+    # Remove the user's session cookie
+    session.pop("user", None)
+    flash("You have been logged out")
+    return redirect(url_for("home"))
 
 
 # Route for adding a recipe

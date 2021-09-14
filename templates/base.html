@@ -34,18 +34,25 @@
                 <ul class="right hide-on-med-and-down">
                     <!-- Home -->
                     <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <!-- Only display these links if the user is logged in -->
                     <!-- Recipes -->
                     <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
-                    <!-- Profile -->
-                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <!-- Manage Categories -->
-                    <li><a href="">Manage Categories</a></li>
-                    <!-- Login -->
-                    <li><a href="{{ url_for('login') }}">Login</a></li>
-                    <!-- Sign Up -->
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
-                    <!-- Logout -->
-                    <li><a href="">Logout</a></li>
+                    {% if session.user %}
+                        <!-- Profile -->
+                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                        <!-- Only display this link if the user is the admin -->
+                        {% if session.user|lower == "admin"|lower %}
+                            <!-- Manage Categories -->
+                            <li><a href="">Manage Categories</a></li>
+                        {% endif %}
+                        <!-- Logout -->
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    {% else %}
+                        <!-- Login -->
+                        <li><a href="{{ url_for('login') }}">Login</a></li>
+                        <!-- Sign Up -->
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                    {% endif %}              
                 </ul>
             </div>
         </nav>
@@ -53,20 +60,27 @@
         <!-- Mobile sidenav -->
         <ul class="sidenav text-shadow" id="mobile-demo">
             <h4 class="center-align grey-text text-lighten-4 text-shadow">RecipePod</h4>
-            <!-- Home -->
-            <li><a href="{{ url_for('home') }}">Home</a></li>
-            <!-- Recipes -->
-            <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
-            <!-- Profile -->
-            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-            <!-- Manage Categories -->
-            <li><a href="">Manage Categories</a></li>
-            <!-- Login -->
-            <li><a href="{{ url_for('login') }}">Login</a></li>
-            <!-- Sign Up -->
-            <li><a href="{{ url_for('register') }}">Register</a></li>
-            <!-- Logout -->
-            <li><a href="">Logout</a></li>
+             <!-- Home -->
+             <li><a href="{{ url_for('home') }}">Home</a></li>
+             <!-- Only display these links if the user is logged in -->
+             <!-- Recipes -->
+             <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+             {% if session.user %}
+                 <!-- Profile -->
+                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                 <!-- Only display this link if the user is the admin -->
+                 {% if session.user|lower == "admin"|lower %}
+                     <!-- Manage Categories -->
+                     <li><a href="">Manage Categories</a></li>
+                 {% endif %}
+                 <!-- Logout -->
+                 <li><a href="{{ url_for('logout') }}">Logout</a></li>
+             {% else %}
+                 <!-- Login -->
+                 <li><a href="{{ url_for('login') }}">Login</a></li>
+                 <!-- Sign Up -->
+                 <li><a href="{{ url_for('register') }}">Register</a></li>
+             {% endif %}
         </ul>
     </header>
 </body>
