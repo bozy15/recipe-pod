@@ -17,7 +17,6 @@
 
 **All tests on laptop were repeated in Chrome and Firefox on two different screen sizes.**
 
-
 ### Tests on Mobiles and tablets
 
 **All tests were performed on this developers Xiaomi mi 10 mobile device and iPad. All tests done on Laptop were performed on the mobile devices. Below are the specific tests for mobile devices.**
@@ -25,7 +24,6 @@
 ## Client Stories Tests
 
 #### As a user, I want:
-
 
 ## Automated Tests
 
@@ -39,9 +37,10 @@ These were the validation services use to check the projects code.
 
 #### Solved Bugs
 
-- 1. **Bug 1** 
-    - Description: **The user can't see the recipe's category name when on the recipe page**
-    * Fix: In the app.py file, within the the add_recipe view, the category_name key was incorrectly set to category.
+**Bug 1** 
+- Description: **The user can't see the recipe's category name when on the recipe page** 
+
+* Fix: In the app.py file, within the the add_recipe view, the category_name key was incorrectly set to category.
 
     <div align="center">
     <img src="static/images/bug1.png">
@@ -58,10 +57,6 @@ These were the validation services use to check the projects code.
     <div align="center">
     <img src="static/images/bug1-fix2.png">
     </div>
-   
-
-
-
 
 #### Unsolved Bugs
 
