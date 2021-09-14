@@ -103,11 +103,14 @@ def profile(username):
     # Grabs the session users's username from the database
     username = mongo.db.users.find_one({"username":
                                         session["user"]})["username"]
+    
+    # If the user has submitted recipes, retrieve them
+    recipes = list(mongo.db.recipes.find({"created_by": session["user"]}))
 
     # If the user is logged in, show their profile
     # otherwise redirect to the login page
     if session["user"]:
-        return render_template("profile.html", username=username)
+        return render_template("profile.html", username=username, recipes=recipes)
 
     return redirect(url_for("login"))
 
@@ -133,15 +136,42 @@ def add_recipes():
             "method": request.form.getlist("method"),
             "prep_time": request.form.get("prep_time"),
             "serves": request.form.get("serves"),
-            "created_by": session["user"].capitalize()
+            "created_by": session["user"].lower()
         }
         # Inserts the recipe into the database
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe added")
-        return redirect(url_for("recipes"))
+        return redirect(url_for("profile", username=session["user"]))
 
     categories = mongo.db.categories.find().sort("name", 1)
     return render_template("add_recipes.html", categories=categories)
+
+
+# Route for editing a recipe
+@app.route("/edit_recipes/<recipe_id>", methods=["GET", "POST"])
+def edit_recipes(recipe_id):
+    # Grabs recipe from database
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    if request.method == "POST":
+        # Grabs the recipe details from the form and stores them in a dictionary
+        recipe_details = {
+            "recipe_name": request.form.get("recipe_name"),
+            "category_name": request.form.get("category_name"),
+            "image_url": request.form.get("image_url"),
+            "ingredients": request.form.getlist("ingredients"),
+            "method": request.form.getlist("method"),
+            "prep_time": request.form.get("prep_time"),
+            "serves": request.form.get("serves"),
+            "created_by": session["user"].lower()
+        }
+        # Updates the recipe in the database
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, recipe_details)
+        flash("Recipe updated")
+        return redirect(url_for("recipes"))
+
+    # Grabs the categories from the database
+    categories = mongo.db.categories.find().sort("name", 1)
+    return render_template("edit_recipes.html", recipe=recipe, categories=categories)
 
 
 # Tells App where to run

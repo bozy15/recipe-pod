@@ -4,13 +4,13 @@
     <!-- Heading -->
     <div class="row">
         <div class="col s12">
-            <h3 class="center-align">Add a Recipe</h3>
+            <h3 class="center-align">Edit Recipe</h3>
         </div>
     </div>
     <!-- Add Recipe form -->
     <section class="valign-wrapper">
         <div class="row">
-            <form class="col s12 text-shadow" action="{{ url_for('add_recipes') }}" method="POST">
+            <form class="col s12 text-shadow" action="{{ url_for('edit_recipes') }}" method="POST">
                 <div class="card-panel">
                     <!-- Recipe category dropdown -->
                     <div class="row">
@@ -41,7 +41,8 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-link prefix"></i>
-                            <input type="url" id="image_url" name="image_url" class="validate" required>
+                            <input type="url" id="image_url" name="image_url" class="validate" value="{{ recipe.image_url }}" required>
+                            <span>Enter you new URL here or just keep the origial one</span>
                             <label for="image_url">Recipe's Image URL</label>
                         </div>
                     </div>
@@ -67,11 +68,21 @@
                     <!-- End of Serves -->
                     <!-- Ingredients -->
                     <div id="ingredient_list" class="row">
+                        <!-- for loop to display all the ingredients -->
+                        {% for ingredient in recipe.ingredients %}
                         <div class="input-field col s12">
                             <i class="fas fa-list prefix"></i>
                             <input type="text" id="ingredients" name="ingredients" class="validate" minlength="3" maxlength="500" required />
-                            <label for="ingredients">Ingredients</label>
+                            <!-- Stops the label printing every time the loop runs -->
+                            {% if loop.index == 1 %}
+                                <label for="ingredients">Ingredients</label>
+                            {% endif %}
+                            <!-- If there is more than one ingredient -->
+                            {% if loop.index != 1 %}
+                                <a href="#" id="remove_ingredient" class="text-shadow wave-effect waves-light btn red">Delete <i class="fas fa-trash"></i></a>
+                            {% endif %}
                         </div>
+                        {% endfor %}
                     </div>
                     <!-- Add a New Ingredient -->
                     <div class="row">
@@ -84,12 +95,22 @@
                     <!-- End of Ingredients -->
                     <!-- Method -->
                     <div id="method_list" class="row">
-                        <div class="input-field col s12">
-                            <i class="fas fa-list-ol prefix"></i>
-                            <textarea name="method" id="method" rows="2" class="materialize-textarea validate" minlength="3"
-                                maxlength="600" required></textarea>
-                            <label for="method">Method</label>
-                        </div>
+                        <!-- for loop to display all the methods -->
+                        {% for method in recipe.method %}
+                            <div class="input-field col s12">
+                                <i class="fas fa-list-ol prefix"></i>
+                                <textarea name="method" id="method" rows="2" class="materialize-textarea validate" minlength="3"
+                                    maxlength="600" required></textarea>
+                                <!-- Stops the label printing every time the loop runs -->
+                                {% if loop.index == 1 %}
+                                    <label for="method">Method</label>
+                                {% endif %}
+                                <!-- If there is more than one method -->
+                                {% if loop.index != 1 %}
+                                    <a href="#" id="remove_method" class="text-shadow wave-effect waves-light btn red">Delete <i class="fas fa-trash"></i></a>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
                     </div>
                     <!-- Add another step -->
                     <div class="row">
@@ -102,7 +123,7 @@
                     <!-- Reset button -->
                     <div class="row valign-wrapper">
                         <div class="col s12">
-                            <a href="{{ url_for('add_recipes') }}" class="btn red text-shadow">Reset</a>
+                            <a href="{{ url_for('edit_recipes') }}" class="btn red text-shadow">Reset</a>
                         </div>
                         <!-- Add Recipe button -->
                         <div class="col s12 center-align">
