@@ -10,17 +10,22 @@
     <!-- Add Recipe form -->
     <section class="valign-wrapper">
         <div class="row">
-            <form class="col s12 text-shadow" action="{{ url_for('edit_recipes') }}" method="POST">
+            <form class="col s12 text-shadow" action="{{ url_for('edit_recipes', recipe_id=recipe._id) }}" method="POST">
                 <div class="card-panel">
                     <!-- Recipe category dropdown -->
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-folder-open prefix"></i>
                             <select name="category_name" id="category_name" class="validate" required>
-                                <option value="" disabled selected>Choose category</option>
+                                <option value="" disabled>Choose category</option>
                                 <!-- For loop that generates the options -->
-                                {% for category in categories %}   
-                                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                {% for category in categories %} 
+                                    <!-- If category is the same as recipe category display that value-->
+                                    {% if category.category_name == recipe.category_name %}
+                                        <option value="{{ category.category_name }}" selected>{{ category.category_name }}</option>
+                                    {% else %} <!-- If not, display all the categories  -->
+                                        <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                                    {% endif %}
                                 {% endfor %}
                             </select>
                             <label for="category_name">Recipe Category</label>
@@ -32,7 +37,7 @@
                         <div class="input-field col s12">
                             <i class="fas fa-pencil-alt prefix"></i>
                             <input type="text" id="recipe_name" name="recipe_name" minlength="4" maxlength="30"
-                                class="validate" required>
+                                class="validate" value="{{ recipe.recipe_name }}" required>
                             <label for="recipe_name">Recipe's Name</label>
                         </div>
                     </div>
@@ -42,7 +47,6 @@
                         <div class="input-field col s12">
                             <i class="fas fa-link prefix"></i>
                             <input type="url" id="image_url" name="image_url" class="validate" value="{{ recipe.image_url }}" required>
-                            <span>Enter you new URL here or just keep the origial one</span>
                             <label for="image_url">Recipe's Image URL</label>
                         </div>
                     </div>
@@ -51,7 +55,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-clock prefix"></i>
-                            <input type="text" id="prep_time" name="prep_time" class="validate"
+                            <input type="text" id="prep_time" name="prep_time" class="validate" value="{{ recipe.prep_time }}"
                                 required>
                             <label for="prep_time">Time to make</label>
                         </div>
@@ -61,7 +65,7 @@
                     <div class="row">
                         <div class="input-field col s12">
                             <i class="fas fa-users prefix"></i>
-                            <input type="text" id="serves" name="serves" class="validate" required>
+                            <input type="text" id="serves" name="serves" class="validate" value="{{ recipe.serves }}" required>
                             <label for="serves">Serves</label>
                         </div>
                     </div>
@@ -72,7 +76,7 @@
                         {% for ingredient in recipe.ingredients %}
                         <div class="input-field col s12">
                             <i class="fas fa-list prefix"></i>
-                            <input type="text" id="ingredients" name="ingredients" class="validate" minlength="3" maxlength="500" required />
+                            <input type="text" id="ingredients" name="ingredients" class="validate" minlength="3" maxlength="500" value="{{ ingredient }}" required />
                             <!-- Stops the label printing every time the loop runs -->
                             {% if loop.index == 1 %}
                                 <label for="ingredients">Ingredients</label>
@@ -99,7 +103,7 @@
                             <div class="input-field col s12">
                                 <i class="fas fa-list-ol prefix"></i>
                                 <textarea name="method" id="method" rows="2" class="materialize-textarea validate" minlength="3"
-                                    maxlength="600" required></textarea>
+                                    maxlength="600" required>{{ method }}</textarea>
                                 <!-- Stops the label printing every time the loop runs -->
                                 {% if loop.index == 1 %}
                                     <label for="method">Method</label>
@@ -123,11 +127,11 @@
                     <!-- Reset button -->
                     <div class="row valign-wrapper">
                         <div class="col s12">
-                            <a href="{{ url_for('edit_recipes') }}" class="btn red text-shadow">Reset</a>
+                            <a href="{{ url_for('edit_recipes', recipe_id=recipe._id) }}" class="btn red text-shadow">Reset</a>
                         </div>
                         <!-- Add Recipe button -->
                         <div class="col s12 center-align">
-                            <button class="btn green text-shadow" type="submit" name="add_recipe">Add Recipe</button>
+                            <button class="btn green text-shadow" type="submit" name="add_recipe">Edit Recipe</button>
                         </div>
                     </div>
 
