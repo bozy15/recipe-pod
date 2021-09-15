@@ -54,7 +54,7 @@
                                 <span>Created By: {{ recipe.created_by }}</span>
                             </div>
                             <div class="card-action center-align">
-                                <a href="#full-recipe" class="btn waves-effect waves-light text-shadow">
+                                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="btn waves-effect waves-light text-shadow">
                                     <i class="fas fa-eye left"></i>
                                     See Recipe
                                 </a>
