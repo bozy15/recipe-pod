@@ -1,5 +1,6 @@
 // All JS contained in this file will run once the page has fully loaded
 $(document).ready(function () {
+  // ---- MATERIALIZE.JS ---- //
   // initialize the Sidebar
   $(".sidenav").sidenav({ edge: "right" });
 
@@ -8,6 +9,9 @@ $(document).ready(function () {
 
   // initialize the select
   $("select").formSelect();
+
+  // initialize the modal
+  $(".modal").modal();
 
   // Add another input field for the user to add a new ingredient
   $("#new_ingredient").click(function () {
@@ -40,7 +44,7 @@ $(document).ready(function () {
     );
   });
 
-  // initialize the delete method button
+  // Initialize the delete method button
   $("#method_list").on("click", "#remove_method", function (e) {
     e.preventDefault();
     $(this).parent().remove();
