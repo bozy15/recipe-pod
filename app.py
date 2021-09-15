@@ -56,7 +56,7 @@ def login():
                     session["is_admin"] = True
                 else:
                     session["is_admin"] = False
-                flash("Welcome back, {}".format(request.form.get("username")))
+                flash("Welcome back, {}".format(request.form.get("username").capitalize()))
                 return redirect(url_for("profile", username=session["user"]))
             else:
                 flash("Incorrect username and/or password")
@@ -103,14 +103,16 @@ def profile(username):
     # Grabs the session users's username from the database
     username = mongo.db.users.find_one({"username":
                                         session["user"]})["username"]
-    
+
     # If the user has submitted recipes, retrieve them
     recipes = list(mongo.db.recipes.find({"created_by": session["user"]}))
 
     # If the user is logged in, show their profile
     # otherwise redirect to the login page
     if session["user"]:
-        return render_template("profile.html", username=username, recipes=recipes)
+        return render_template("profile.html",
+                               username=username,
+                               recipes=recipes)
 
     return redirect(url_for("login"))
 
@@ -171,7 +173,31 @@ def edit_recipes(recipe_id):
 
     # Grabs the categories from the database
     categories = mongo.db.categories.find().sort("name", 1)
-    return render_template("edit_recipes.html", recipe=recipe, categories=categories)
+    return render_template("edit_recipes.html",
+                           recipe=recipe,
+                           categories=categories)
+
+
+# Route to see the full recipe
+@app.route("/full_recipe/<recipe_id>")
+def full_recipe(recipe_id):
+    # Grabs the recipe from the database
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("full_recipe.html", recipe=recipe)
+
+
+# Route for user to delete their own recipes
+@app.route("/delete_own_recipes/<recipe_id>")
+def delete_own_recipes(recipe_id):
+    # Deletes the recipe from the database
+    mongo.db.recipes.remove({ 
+        "_id": ObjectId(recipe_id),
+        "created_by": session["user"].lower() # Checks if the user is the creator
+    })
+    flash("Recipe deleted")
+    return redirect(url_for(
+        "profile",
+        username=session["user"]))  # Redirects to the user's profile page
 
 
 # Tells App where to run
