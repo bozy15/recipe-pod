@@ -83,11 +83,28 @@
              {% endif %}
         </ul>
     </header>
-</body>
-<!-- End Mobile sidenav -->
-{% block content %}
-{% endblock %}
+    <!-- End Mobile sidenav -->
+    <!-- Display any flash messages -->
+    <section>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="row flashes">
+                        <div class="center-align">
+                            <h2>{{ message }}</h2>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
+    <!-- End Display any flash messages -->
 
+{% block content %}
+{% endblock %}   
+
+    <!-- Footer -->
+    <!-- End of Footer -->
 <!-- jQuery v3.6.0: https://code.jquery.com/ -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
