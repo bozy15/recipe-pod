@@ -56,7 +56,8 @@ def login():
                     session["is_admin"] = True
                 else:
                     session["is_admin"] = False
-                flash("Welcome back, {}".format(request.form.get("username").capitalize()))
+                flash("Welcome back, {}".format(
+                    request.form.get("username").capitalize()))
                 return redirect(url_for("profile", username=session["user"]))
             else:
                 flash("Incorrect username and/or password")
@@ -190,14 +191,67 @@ def full_recipe(recipe_id):
 @app.route("/delete_own_recipes/<recipe_id>")
 def delete_own_recipes(recipe_id):
     # Deletes the recipe from the database
-    mongo.db.recipes.remove({ 
+    mongo.db.recipes.remove({
         "_id": ObjectId(recipe_id),
-        "created_by": session["user"].lower() # Checks if the user is the creator
+        "created_by":
+        session["user"].lower()  # Checks if the user is the creator
     })
     flash("Recipe deleted")
     return redirect(url_for(
         "profile",
         username=session["user"]))  # Redirects to the user's profile page
+
+
+# Route for admin to get and manage all categories
+@app.route("/manage_categories")
+def manage_categories():
+    # Grabs all categories from the database
+    categories = list(mongo.db.categories.find().sort("category_name", 1))
+    return render_template("manage_categories.html", categories=categories)
+
+
+
+# Route for admin to create a new category
+@app.route("/add_category", methods=["GET", "POST"])
+def add_category():
+    if request.method == "POST":
+        # Grabs the category details from the form and stores them in a dictionary
+        category_details = {
+            "category_name": request.form.get("category_name")
+        }
+        # Inserts the category into the database
+        mongo.db.categories.insert_one(category_details)
+        flash("New category added")
+        return redirect(url_for("manage_categories"))
+    return render_template("add_category.html")
+
+
+# Route for admin to edit a category
+@app.route("/edit_category/<category_id>", methods=["GET", "POST"])
+def edit_category(category_id):
+    # Grabs the category from the database
+    category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
+    if request.method == "POST":
+        # Grabs the category details from the form and stores them in a dictionary
+        category_details = {
+            "category_name": request.form.get("category_name")
+        }
+        # Updates the category in the database
+        mongo.db.categories.update({"_id": ObjectId(category_id)},
+                                   category_details)
+        flash("Category updated")
+        return redirect(url_for("manage_categories"))
+
+    return render_template("edit_category.html", category=category)
+
+
+# Route for admin to delete a category
+@app.route("/delete_category/<category_id>")
+def delete_category(category_id):
+    # Deletes the category from the database
+    mongo.db.categories.remove({"_id": ObjectId(category_id)})
+    flash("Category deleted")
+    return redirect(url_for("manage_categories"))
 
 
 # Tells App where to run
