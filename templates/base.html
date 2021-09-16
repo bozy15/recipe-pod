@@ -43,7 +43,7 @@
                         <!-- Only display this link if the user is the admin -->
                         {% if session.is_admin %}
                             <!-- Manage Categories -->
-                            <li><a href="">Manage Categories</a></li>
+                            <li><a href="{{ url_for('manage_categories') }}">Manage Categories</a></li>
                         {% endif %}
                         <!-- Logout -->
                         <li><a href="{{ url_for('logout') }}">Logout</a></li>
@@ -71,7 +71,7 @@
                  <!-- Only display this link if the user is the admin -->
                  {% if session.is_admin %}
                      <!-- Manage Categories -->
-                     <li><a href="">Manage Categories</a></li>
+                     <li><a href="{{ url_for('manage_categories') }}">Manage Categories</a></li>
                  {% endif %}
                  <!-- Logout -->
                  <li><a href="{{ url_for('logout') }}">Logout</a></li>
