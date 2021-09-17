@@ -94,6 +94,21 @@ These were the validation services use to check the projects code.
     </div>
 
 
+#### **Bug 4**
+- Description: **The delete category button would only delete the first category and not the selected category**
+
+* Fix: The section of code uses a for loop to iterate through the categories and a modal that pops up when the user clicks the delete button to ask the user if they want to delete the category. The for loop was duplicating the objectID of the categories and was causing the bug. I resolved the bug by adding the objectID to the anchor and modal ID.
+
+* Test: The user can now delete the category they selected.
+
+
+#### **Bug 5**
+- Description: **When the user edits a category the edited category is there but so is the old category**
+
+* Fix: the issue was I had copied the `add_category.html` file as a template for the `edit_category.html` file. This caused the bug because the action in the form tag was directing to `{{ url_for('add_category') }}` when it should have directed to `{{ url_for('edit_category') }}`. I resolved the bug by changing the action to `{{ url_for('edit_category') }}`.
+
+* Test: The user can now edit the category they selected  and it is updated in the database.
+
 #### Unsolved Bugs
 
 No noticed unresolved bugs during testing on all devices.
