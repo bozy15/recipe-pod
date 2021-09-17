@@ -20,7 +20,7 @@
                     <p>Search our recipes below and find the perfect recipe for you!</p>
                     <!-- Customized Materialize search bar: https://materializecss.com/navbar.html  -->
                     <div class="row">
-                        <form action="#search" method="post" class="col s12">
+                        <form action="{{ url_for('search') }}" method="POST" class="col s12">
                             <div class="valign-wrapper center-align">
                                 <div class="input-field col s12 m8">
                                     <i class="fas fa-search prefix white-text"></i>

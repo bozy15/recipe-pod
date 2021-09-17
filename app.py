@@ -36,6 +36,14 @@ def recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
+# Route for searching for a recipe
+@app.route('/search', methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("recipes.html", recipes=recipes)
+
+
 # Route for the login page
 @app.route('/login', methods=["GET", "POST"])
 def login():
@@ -210,15 +218,12 @@ def manage_categories():
     return render_template("manage_categories.html", categories=categories)
 
 
-
 # Route for admin to create a new category
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
         # Grabs the category details from the form and stores them in a dictionary
-        category_details = {
-            "category_name": request.form.get("category_name")
-        }
+        category_details = {"category_name": request.form.get("category_name")}
         # Inserts the category into the database
         mongo.db.categories.insert_one(category_details)
         flash("New category added")
@@ -233,9 +238,7 @@ def edit_category(category_id):
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     if request.method == "POST":
         # Grabs the category details from the form and stores them in a dictionary
-        category_details = {
-            "category_name": request.form.get("category_name")
-        }
+        category_details = {"category_name": request.form.get("category_name")}
         # Updates the category in the database
         mongo.db.categories.update({"_id": ObjectId(category_id)},
                                    category_details)

@@ -14,7 +14,7 @@
     <section>
         <div class="container">
             <div class="row card">
-                <form action="#search" class="col s12" method="POST">
+                <form action="{{ url_for('search') }}" class="col s12" method="POST">
                     <div class="row valign-wrapper center-align">
                         <div class="input-field col s12">
                             <i class="fas fa-search prefix"></i>
@@ -38,6 +38,7 @@
     </section>
     <!-- End Search bar -->
     <!-- Recipes -->
+    {% if recipes|length > 0 %}
     <section>
         <div class="container">
             <div class="row">
@@ -62,5 +63,20 @@
                         </div>
                     </div>
                 {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% else %}
+    <!-- No results -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 center-align">
+                    <h3>No results</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
     <!-- End of recipes -->
 {% endblock %}
