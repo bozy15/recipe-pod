@@ -1,5 +1,6 @@
 # imports
 import os
+from datetime import datetime
 from flask import Flask, flash, render_template, request, session, url_for, redirect
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -21,6 +22,10 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 # Creates an instance of the PyMongo class to work with MongoDB
 mongo = PyMongo(app)
 
+# inject date time into templates
+@app.context_processor
+def inject_now():
+    return dict(now=datetime.utcnow())
 
 # Route for the home page
 @app.route('/')
