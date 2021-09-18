@@ -1,10 +1,10 @@
 body {
   height: 100vh;
-  background-color: #b3dee5;
+  background-color: rgba(255, 161, 1, 0.7);
 }
 
 .text-shadow {
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 2px #000000b3;
 }
 
 /* --- BASE.HTML CSS --- */
@@ -16,7 +16,7 @@ nav.nav-extended {
 nav.nav-extended,
 ul.sidenav {
   position: fixed;
-  background-color: #ffa101;
+  background-color: #1e3952;
   opacity: 0.8;
 }
 
@@ -27,11 +27,21 @@ ul.sidenav {
 }
 
 ul li:hover {
-  background-color: #31525b;
+  background-color: #ffa101;
 }
 
 nav .brand-logo {
   margin: 0 0 0 1rem;
+}
+
+/* Footer */
+.page-footer.center {
+  background-color: #1e3952
+}
+
+.social-icon {
+  font-size: 2rem;
+  padding: 1rem;
 }
 /* ---END OF BASE.HTML CSS --- */
 
@@ -43,21 +53,54 @@ nav .brand-logo {
   background: url(../images/hero-image.jpg) no-repeat center center / cover;
 }
 
+/* Heading */
+.hero-body.center.row {
+  width: 21rem;
+  color: #fff;
+  position: relative;
+  top: 8rem;
+}
+
+.hero-header.text-shadow {
+  font-size: 3rem;
+}
+
+
+
+/* info card */
+.info-container {
+  margin-top: 1rem;
+  line-height: normal;
+}
+
+.info-card {
+  border-radius: 8px;
+  background-color: #1e3952db;
+  color: #fff;
+  font-size: 1.25rem;
+}
+
 /* Search Bar */
 .input-field.col.s12.m8 {
   margin-inline-start: 8.5rem; /* centers the search bar on medium and large screens*/
 }
+
+label.search-recipes {
+  color: white;
+  text-shadow: 1px 1px 2px #000000b3;
+  font-size: inherit;
+  padding-left: 1rem;
+}
+
 /* --- END OF INDEX.HTML CSS --- */
 
 /* --- REGISTER.HTML CSS --- */
 /* Register button */
 .register-btn.col.s12.btn.text-shadow {
-  width: 50%;   /* centers the register button */
+  width: 50%; /* centers the register button */
   margin-inline-start: 25%;
 }
 /* --- END OF REGISTER.HTML CSS --- */
 
 /* --- FULL_RECIPE.HTML CSS --- */
 /* recipe image card */
-
-

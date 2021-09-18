@@ -3,18 +3,18 @@
 {% block content %}
 <!-- Hero Image -->
 <section class="hero-image">
-    <div class="hero-body row">
-        <div class="col s12 m6 offset-m6 l6 offset-l6">
+    <div class="hero-body center row">
+        <div class="col">
             <h1 class="hero-header text-shadow">Home to everyones favorite food and beverage recipes!</h1>
         </div>
 </section>
 <!-- End Hero Image -->
 <!-- Info card -->
-<section class="container">
+<section class="info-container container">
     <div class="row">
         <div class="col l12 m12">
             <card>
-                <div class="card-content card-panel center-align text-shadow">
+                <div class="info-card card-content card-panel center-align text-shadow">
                     <p>Love cooking amazing food you want to share with world!</p>
                     <p>In the mood to craft a cracking cocktail?</p>
                     <p>Search our recipes below and find the perfect recipe for you!</p>
@@ -22,10 +22,10 @@
                     <div class="row">
                         <form action="{{ url_for('search') }}" method="POST" class="col s12">
                             <div class="valign-wrapper center-align">
-                                <div class="input-field col s12 m8">
+                                <div class="input-field col s6 offset-s3">
                                     <i class="fas fa-search prefix white-text"></i>
                                     <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                                    <label for="query">Search Recipes</label>
+                                    <label class="search-recipes" for="query">Search Recipes</label>
                                 </div>
                             </div>
                             <div class="col s12 m12 l12">
