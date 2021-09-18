@@ -197,6 +197,8 @@ This project was developed using [VScode](https://code.visualstudio.com/), commi
 
 - The code used to template the registration form both in the **app.py** and **register.html** was based around Code Institute's [Task Manager project](https://www.youtube.com/watch?v=Sfkg3358Igc) and modified to this projects needs.
 
+- The code used to inject the current datetime in to the templates was based on [**this**](https://stackoverflow.com/questions/41231290/how-to-display-current-year-in-flask-template) answered by [Davidism](https://stackoverflow.com/users/400617/davidism)
+
 #### Educational Credit
 
 ### Acknowledgements
