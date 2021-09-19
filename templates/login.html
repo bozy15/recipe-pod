@@ -2,16 +2,16 @@
 {% extends "base.html" %}
 {% block content %}
 <!-- Page heading -->
-<div class="container">
-    <div class="row">
+<div class="text-shadow container">
+    <div class="login-heading-row row">
         <div class="col s12">
-            <h1 class="center-align">Login</h1>
+            <h1 class="login-heading center-align">Login</h1>
         </div>
     </div>
 </div>
 <!-- End page heading -->
 <!-- Login form -->
-<section class="valign-wrapper">
+<section class="text-shadow valign-wrapper">
     <div class="container">
         <div class="row">
             <form action="{{ url_for('login') }}" method="POST" class="col s12 m10 l8 offset-m1 offset-l2">
@@ -22,7 +22,7 @@
                             <i class="fas fa-user-plus prefix"></i>
                             <input id="username" type="text" name="username" minlength="4" maxlength="14"
                                 pattern="^[a-zA-Z0-9]{4,14}$" class="validate" required>
-                            <label for="username">Username</label>
+                            <label class="login-form" for="username">Username</label>
                         </div>
                     </div>
                     <!-- password -->
@@ -31,7 +31,7 @@
                             <i class="fas fa-key prefix"></i>
                             <input id="password" type="password" name="password" minlength="4" maxlength="14"
                                 pattern="^[a-zA-Z0-9]{4,14}$" class="validate" required>
-                            <label for="password">Password</label>
+                            <label class="login-form" for="password">Password</label>
                         </div>
                     </div>
                     <!-- confirm password -->
@@ -40,21 +40,21 @@
                             <i class="fas fa-key prefix"></i>
                             <input id="confirm_password" type="password" name="confirm_password" minlength="4"
                                 maxlength="14" pattern="^[a-zA-Z0-9]{4,14}$" class="validate" required>
-                            <label for="confirm_password">Confirm password</label>
+                            <label class="login-form" for="confirm_password">Confirm password</label>
                         </div>
                     </div>                                     
                 </div> 
                 <!-- login button -->
-                <div class="row">
-                    <button type="submit" class="register-btn col s12 btn text-shadow">
+                <div class="login-row row">
+                    <button type="submit" class="login-btn col s12 btn text-shadow">
                         Login
                         <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
                 <div class="row">
                     <div class="col s12 center-align">
-                        <p>Don't have an account yet?</p>
-                        <a href="{{ url_for('register') }}" class="btn waves-effect waves-light text-shadow">Sign Up</a>
+                        <p class="sign-up-text text-shadow">Don't have an account yet?</p>
+                        <a href="{{ url_for('register') }}" class="sign-up-btn btn waves-effect waves-light text-shadow">Sign Up</a>
                     </div>
                 </div>
             </form>    
