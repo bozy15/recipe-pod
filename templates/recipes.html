@@ -2,16 +2,16 @@
 {% extends "base.html" %}
 {% block content %}
     <!-- Page heading -->
-    <div class="container">
-        <div class="row">
+    <div class="container text-shadow">
+        <div class="recipe-heading-row row">
             <div class="col s12">
-                <h1 class="center-align">Recipes</h1>
+                <h1 class="recipe-heading center-align">Recipes</h1>
             </div>
         </div>
     </div>
     <!-- End page heading -->
     <!-- Search bar -->
-    <section>
+    <section class="text-shadow">
         <div class="container">
             <div class="row card">
                 <form action="{{ url_for('search') }}" class="col s12" method="POST">
@@ -19,7 +19,7 @@
                         <div class="input-field col s12">
                             <i class="fas fa-search prefix"></i>
                             <input type="text" name="query" id="query" minlength="3" class="validate" required>
-                            <label for="query">Search Recipes</label>
+                            <label class="search-recipes" for="query">Search Recipes</label>
                         </div>
                     </div>
                     <div class="row">
@@ -27,7 +27,7 @@
                             <a href="{{ url_for('recipes') }}" class="btn waves-effect waves-light red center-align text-shadow">
                                 Cancel
                             </a>
-                            <button type="submit" class="btn waves-effect waves-light text-shadow">
+                            <button type="submit" class="recipe-button btn waves-effect waves-light text-shadow">
                                 <i class="fas fa-search left"></i>
                                 Search
                             </button>
@@ -39,7 +39,7 @@
     <!-- End Search bar -->
     <!-- Recipes -->
     {% if recipes|length > 0 %}
-    <section>
+    <section class="text-shadow">
         <div class="container">
             <div class="row">
                 <!-- Loops through all the recipes and displays them -->
@@ -55,7 +55,7 @@
                                 <span>Created By: {{ recipe.created_by }}</span>
                             </div>
                             <div class="card-action center-align">
-                                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="btn waves-effect waves-light text-shadow">
+                                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="recipe-button btn waves-effect waves-light text-shadow">
                                     <i class="fas fa-eye left"></i>
                                     See Recipe
                                 </a>
@@ -68,7 +68,7 @@
     </section>
     {% else %}
     <!-- No results -->
-    <section>
+    <section class="text-shadow">
         <div class="container">
             <div class="row">
                 <div class="col s12 center-align">

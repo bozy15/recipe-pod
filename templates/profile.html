@@ -3,26 +3,27 @@
 {% block content %}
 
 <!-- Username display -->
-<div class="row">
+<div class="text-shadow row">
     <div class="col s12">
-        <h1 class="center-align">
+        <h1 class="profile-heading center-align">
             {{ username.capitalize() }}'s Profile
         </h1>
     </div>
 </div>
 <!-- End of Username display -->
 <!-- Display the users recipes -->
-<div class="row">
+<div class="my-recipe-row text-shadow row">
     <div class="col s12">
-        <h3 class="center-align">My Recipes</h3>
+        <h3 class="my-recipe-heading center-align">My Recipes</h3>
     </div>
 </div>
-<!-- End of Users displayed recipes -->
 <!-- Add Recipe button -->
 <div class="row col s12 center-align">
-    <a class="waves-effect waves-light btn" href="{{ url_for('add_recipes') }}">Add Recipe</a>
+    <a class="add-recipe-btn waves-effect waves-light btn-large" href="{{ url_for('add_recipes') }}"><i class="fas fa-plus"></i> Add Recipe</a>
 </div>
 <!-- End of recipe button -->
+<!-- End of Users displayed recipes -->
+
 <!-- Users recipes -->
 <section>
     <div class="container">
@@ -36,7 +37,7 @@
             {% else %}
                 <!-- Loops through recipes created by the user -->
                 {% for recipe in recipes %}
-                    <div class="col s12 m6 l4">
+                    <div class="text-shadow col s12 m6 l4">
                         <div class="card">
                             <div class="card-image">
                                 <img src="{{ recipe.image_url }}" alt="{{ recipe.recipe_name }}">
@@ -47,7 +48,7 @@
                                 <span>Created By: {{ recipe.created_by }}</span>
                             </div>
                             <div class="card-action center-align">
-                                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="btn waves-effect waves-light text-shadow">
+                                <a href="{{ url_for('full_recipe', recipe_id=recipe._id) }}" class="recipe-button btn waves-effect waves-light text-shadow">
                                     <i class="fas fa-eye left"></i>
                                     See Recipe
                                 </a>
