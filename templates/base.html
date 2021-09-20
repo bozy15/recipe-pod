@@ -38,70 +38,70 @@
                     <!-- Recipes -->
                     <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
                     {% if session.user %}
-                        <!-- Profile -->
-                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                        <!-- Only display this link if the user is the admin -->
-                        {% if session.is_admin %}
-                            <!-- Manage Categories -->
-                            <li><a href="{{ url_for('manage_categories') }}">Manage Categories</a></li>
-                        {% endif %}
-                        <!-- Logout -->
-                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                    <!-- Profile -->
+                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                    <!-- Only display this link if the user is the admin -->
+                    {% if session.is_admin %}
+                    <!-- Manage Categories -->
+                    <li><a href="{{ url_for('manage_categories') }}">Manage Categories</a></li>
+                    {% endif %}
+                    <!-- Logout -->
+                    <li><a href="{{ url_for('logout') }}">Logout</a></li>
                     {% else %}
-                        <!-- Login -->
-                        <li><a href="{{ url_for('login') }}">Login</a></li>
-                        <!-- Sign Up -->
-                        <li><a href="{{ url_for('register') }}">Register</a></li>
-                    {% endif %}              
+                    <!-- Login -->
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                    <!-- Sign Up -->
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
         <!-- End Main Navbar -->
         <!-- Mobile sidenav -->
         <ul class="sidenav text-shadow" id="mobile-demo">
-            <h4 class="center-align grey-text text-lighten-4 text-shadow">RecipePod</h4>
-             <!-- Home -->
-             <li><a href="{{ url_for('home') }}">Home</a></li>       
-             <!-- Recipes -->
-             <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
-             <!-- Only display these links if the user is logged in -->
-             {% if session.user %}
-                 <!-- Profile -->
-                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                 <!-- Only display this link if the user is the admin -->
-                 {% if session.is_admin %}
-                     <!-- Manage Categories -->
-                     <li><a href="{{ url_for('manage_categories') }}">Manage Categories</a></li>
-                 {% endif %}
-                 <!-- Logout -->
-                 <li><a href="{{ url_for('logout') }}">Logout</a></li>
-             {% else %}
-                 <!-- Login -->
-                 <li><a href="{{ url_for('login') }}">Login</a></li>
-                 <!-- Sign Up -->
-                 <li><a href="{{ url_for('register') }}">Register</a></li>
-             {% endif %}
+            <li class="center-align grey-text text-lighten-4 text-shadow">RecipePod</li>
+            <!-- Home -->
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <!-- Recipes -->
+            <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+            <!-- Only display these links if the user is logged in -->
+            {% if session.user %}
+            <!-- Profile -->
+            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+            <!-- Only display this link if the user is the admin -->
+            {% if session.is_admin %}
+            <!-- Manage Categories -->
+            <li><a href="{{ url_for('manage_categories') }}">Manage Categories</a></li>
+            {% endif %}
+            <!-- Logout -->
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            {% else %}
+            <!-- Login -->
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <!-- Sign Up -->
+            <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% endif %}
         </ul>
     </header>
     <!-- End Mobile sidenav -->
     <!-- Display any flash messages -->
-    <section>
+    <div>
         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div id="flashes" class="row text-shadow">
-                        <div class="center-align">
-                            <h2>{{ message }}</h2>
-                        </div>
-                    </div>
-                {% endfor %}
-            {% endif %}
+        {% if messages %}
+        {% for message in messages %}
+        <div id="flashes" class="row text-shadow">
+            <div class="center-align">
+                <h2>{{ message }}</h2>
+            </div>
+        </div>
+        {% endfor %}
+        {% endif %}
         {% endwith %}
-    </section>
+    </div>
     <!-- End Display any flash messages -->
 
-{% block content %}
-{% endblock %}   
+    {% block content %}
+    {% endblock %}
 
     <!-- Footer -->
     <footer class="page-footer center">
@@ -113,10 +113,14 @@
                 <div class="col l6 s12">
                     <h5 class="social-padding white-text">Social</h5>
                     <div class="row">
-                        <a target="_blank" class="white-text social-icon" href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a></li>
-                        <a target="_blank" class="white-text social-icon" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a></li>
-                        <a target="_blank" class="white-text social-icon" href="https://twitter.com/"><i class="fab fa-twitter"></i></a></li>
-                        <a target="_blank" class="white-text social-icon" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a></li>
+                        <a target="_blank" class="white-text social-icon" href="https://www.facebook.com/"><i
+                                class="fab fa-facebook"></i></a>
+                        <a target="_blank" class="white-text social-icon" href="https://www.instagram.com/"><i
+                                class="fab fa-instagram"></i></a>
+                        <a target="_blank" class="white-text social-icon" href="https://twitter.com/"><i
+                                class="fab fa-twitter"></i></a>
+                        <a target="_blank" class="white-text social-icon" href="https://www.youtube.com/"><i
+                                class="fab fa-youtube"></i></a>
                     </div>
                 </div>
             </div>
@@ -136,7 +140,6 @@
                         <p class="grey-text text-lighten-4">
                             Design by <a class="developer-link" href="https://github.com/bozy15">bozy15</a>
                         </p>
-                        </p>
                     </div>
                 </div>
             </div>
@@ -144,16 +147,16 @@
     </footer>
     <!-- End copyright responsive Footer -->
     <!-- End of Footer -->
-<!-- jQuery v3.6.0: https://code.jquery.com/ -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<!-- Materialize JS Script: https://materializecss.com/getting-started.html -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<!-- Custom JS file -->
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
-<!-- jinja block to add any custom JS from child templates -->
-{% block scripts %}
-{% endblock %}
+    <!-- jQuery v3.6.0: https://code.jquery.com/ -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Materialize JS Script: https://materializecss.com/getting-started.html -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Custom JS file -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- jinja block to add any custom JS from child templates -->
+    {% block scripts %}
+    {% endblock %}
 
 </body>
 

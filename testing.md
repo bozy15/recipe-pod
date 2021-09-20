@@ -36,7 +36,7 @@
 - [x] Click on the "Profile" button. You should see the profile page.
 - [x] Click on the "Logout" button. You should see the login page.
 
-  **If the user has admin permissions**
+**If the user has admin permissions**
 
 - [x] When you open the app, you should see the main page.
 - [x] Click on the "Home" button. You should see the home page.
@@ -44,6 +44,8 @@
 - [x] Click on the "Profile" button. You should see the profile page.
 - [x] Click on the "Manage Categories" button. You should see the manage categories page.
 - [x] Click on the "Logout" button. You should see the login page.
+
+
 
 ### Tests on Mobiles and tablets
 
