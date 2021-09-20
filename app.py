@@ -22,10 +22,22 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 # Creates an instance of the PyMongo class to work with MongoDB
 mongo = PyMongo(app)
 
+
 # inject date time into templates
 @app.context_processor
 def inject_now():
     return dict(now=datetime.utcnow())
+
+
+# Error handling: source: https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("error404.html"), 404
+
+@app.errorhandler(500)
+def internal_server_error(e):
+    return render_template("error500.html"), 500
+
 
 # Route for the home page
 @app.route('/')
@@ -63,8 +75,8 @@ def login():
                                    request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 user = mongo.db.users.find_one(
-                    {"username": request.form.get("username").lower()})
-                # Check if the user is an admin
+                    {"username": session["user"]})
+                # check if user is admin
                 if user["is_admin"]:
                     session["is_admin"] = True
                 else:
@@ -98,7 +110,8 @@ def register():
         # If username is not in the database, register the user
         register = {
             "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "is_admin": False
         }
         mongo.db.users.insert_one(register)
 
