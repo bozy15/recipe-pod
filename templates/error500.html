@@ -1,0 +1,30 @@
+<!-- Extends "base.html" -->
+{% extends "base.html" %}
+{% block content %}
+<!-- Error heading -->
+<div class="text-shadow login-heading-row row">
+    <div class="col s12">
+        <h3 class="login-heading center-align">
+            This pages doesn't seem to exist!
+        </h3>
+    </div>
+</div>
+
+<section class="text-shadow center-align error-page valign-wrapper">
+    <div class="row">
+        <div class="col s12">
+            <h3 class="error-heading">
+                Not to worry!
+            </h3>
+            <p class="error-text">
+                We couldn't find the page you were looking for.
+            </p>
+        </div>
+        <div class="col s12">
+            <p class="error-text">
+                Click <a href="{{ url_for('home') }}">here</a> to redirect to the home page.
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}
