@@ -16,6 +16,9 @@
         <div class="row">
             <form action="{{ url_for('login') }}" method="POST" class="col s12 m10 l8 offset-m1 offset-l2">
                 <div class="card">
+                    <div class="row"> 
+                        <p id="error_message"></p>
+                    </div>
                     <!-- username -->
                     <div class="row">
                         <div class="input-field col s12">
@@ -42,8 +45,8 @@
                                 maxlength="14" pattern="^[a-zA-Z0-9]{4,14}$" class="validate" required>
                             <label class="login-form" for="confirm_password">Confirm password</label>
                         </div>
-                    </div>                                     
-                </div> 
+                    </div>
+                </div>
                 <!-- login button -->
                 <div class="login-row row">
                     <button type="submit" class="login-btn col s12 btn text-shadow">
@@ -54,10 +57,11 @@
                 <div class="row">
                     <div class="col s12 center-align">
                         <p class="sign-up-text text-shadow">Don't have an account yet?</p>
-                        <a href="{{ url_for('register') }}" class="sign-up-btn btn waves-effect waves-light text-shadow">Sign Up</a>
+                        <a href="{{ url_for('register') }}"
+                            class="sign-up-btn btn waves-effect waves-light text-shadow">Sign Up</a>
                     </div>
                 </div>
-            </form>    
+            </form>
         </div>
     </div>
 </section>

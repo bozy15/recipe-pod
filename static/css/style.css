@@ -262,6 +262,13 @@ label.register-form {
 /* --- END OF REGISTER.HTML CSS --- */
 
 /* --- LOGIN.HTML CSS --- */
+#error_message {
+  position: relative;
+  left: 8%;
+  color: red;
+  font-size: 1.25rem;
+}
+
 .login-heading-row.row {
   width: 40%; /* reduces the width of the background */
 }
@@ -540,15 +547,47 @@ label.add-category {
 }
 
 /* --- END OF ADD_CATEGORY.HTML --- */
+/* --- ERROR404.HTML --- */
+.error-heading {
+  color: #fff;
+  font-size: 4.5rem;
+}
+
+.error-text {
+  font-size: 1.25rem;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+p a { /* Styles the link back to home page on error pages */
+  color: #0adcff;
+  font-weight: 600;
+}
+
+p a:hover {
+  color: #1e3952;
+  text-decoration: underline;
+}
+/* --- END OF ERROR404.HTML --- */
 
 /* Max width for mobiles */
 @media screen and (max-width: 480px) {
+  /* Search bar */
+  .input-field.col.s6.offset-s3 { /* reduces size of placeholder text */
+    font-size: .75rem;
+}
+
   /* Manage_categories.html */
   .manage-heading-row.row {
     width: 60%; /* Reduces the width of the background */
   }
 
   .manage-heading {
+    font-size: 2rem;
+  }
+
+  /* error404.html & error500.html */
+  .login-heading {
     font-size: 2rem;
   }
 }
