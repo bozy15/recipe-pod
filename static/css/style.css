@@ -371,8 +371,6 @@ label.login-form {
   box-shadow: 0px 0px 3px 1px black;
 }
 
-
-
 .form-padding {
   padding-inline: 2rem;
 }
@@ -419,7 +417,9 @@ label.add-recipe {
   text-shadow: 1px 1px 2px #000000b3;
 }
 /* Category dropdown */
-.select-dropdown li.disabled, .select-dropdown li.disabled > span, .select-dropdown li.optgroup {
+.select-dropdown li.disabled,
+.select-dropdown li.disabled > span,
+.select-dropdown li.optgroup {
   color: #fff;
   background-color: #ffa101;
 }
@@ -428,7 +428,8 @@ label.add-recipe {
   background-color: #1e3952b3;
 }
 
-.dropdown-content li > a, .dropdown-content li > span {
+.dropdown-content li > a,
+.dropdown-content li > span {
   color: #fff;
 }
 /* --- END OF ADD_RECIPES.HTML & EDIT_RECIPES.HTML CSS --- */
@@ -459,14 +460,100 @@ label.add-recipe {
 .center-align.card-title {
   border: 2px solid #1e3952;
   border-radius: 8px;
-  padding: .75rem;
+  padding: 0.75rem;
 }
 
 .full-recipe-content {
   display: list-item;
 }
+/* --- END OF FULL_RECIPE.HTML CSS --- */
+/* --- MANAGE_CATEGORIES.HTML --- */
+.section-padding.text-shadow {
+  padding-bottom: 9rem; /*Pushes the footer to the bottom when there isn't much content on the page */
+}
 
-/* Max width for mobile screens */
+.manage-heading-row.row {
+  width: 60%; /* Reduces the size of the background */
+}
+
+.manage-heading {
+  font-weight: 200;
+  color: #fff;
+  margin-top: 7rem;
+  padding: 1.25rem;
+  font-size: 4rem;
+  background-color: #31525b;
+  opacity: 0.8;
+  border-radius: 8px;
+  box-shadow: 0px 0px 3px 1px black;
+}
+
+.category-title.card-title {
+  border: 2px solid #1e3952;
+  border-radius: 8px;
+  padding: 0.75rem;
+  background-color: #1e3952cf;
+}
+
+.add-category-btn {
+  border: 1px solid #1e3952;
+}
+
+.add-category-btn:hover {
+  background-color: #1e3952;
+}
+
+.category-btn {
+  margin: 0.5rem;
+}
+
+/* --- END OF MANAGE_CATEGORIES.HTML --- */
+/* --- ADD_CATEGORY.HTML --- */
+.container.new-cat-padding.text-shadow {
+  padding-bottom: 12rem; /*Pushes the footer to the bottom when there isn't much content on the page */
+}
+
+.add-category-form.card-panel {
+  border-radius: 6px;
+  border: 2px solid #1e395d;
+  font-family: "Poppins";
+  background-color: #b3dee5e8;
+  color: #fff;
+  font-weight: initial;
+  padding-inline: 2rem;
+}
+
+label.add-category {
+  color: white;
+  text-shadow: 1px 1px 2px #000000b3;
+  font-size: inherit;
+  padding-left: 1rem;
+}
+
+.add-new-cat-btn {
+  border: 1px solid #1e3952;
+  background-color: #ffa101;
+}
+
+.add-new-cat-btn:hover {
+  background-color: #1e3952;
+}
+
+/* --- END OF ADD_CATEGORY.HTML --- */
+
+/* Max width for mobiles */
+@media screen and (max-width: 480px) {
+  /* Manage_categories.html */
+  .manage-heading-row.row {
+    width: 60%; /* Reduces the width of the background */
+  }
+
+  .manage-heading {
+    font-size: 2rem;
+  }
+}
+
+/* media for medium and large screens */
 @media screen and (min-width: 768px) {
   .form-padding {
     padding-inline: 10rem;
