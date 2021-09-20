@@ -191,13 +191,17 @@ This project was developed using [VScode](https://code.visualstudio.com/), commi
 
 ### Code
 
-- The secret key used in this project was generated using [Random key Gen](https://randomkeygen.com/)
+- The secret key used in this project was generated using [Random key Gen](https://randomkeygen.com/).
 
 - The code used for the navigation bar was created using [Materialize](https://materializecss.com/navbar.html) as a base template and then edited to fit the needs of this project.
 
 - The code used to template the registration form both in the **app.py** and **register.html** was based around Code Institute's [Task Manager project](https://www.youtube.com/watch?v=Sfkg3358Igc) and modified to this projects needs.
 
-- The code used to inject the current datetime in to the templates was based on [**this**](https://stackoverflow.com/questions/41231290/how-to-display-current-year-in-flask-template) answered by [Davidism](https://stackoverflow.com/users/400617/davidism)
+- The code used to inject the current datetime in to the templates was based on [**this**](https://stackoverflow.com/questions/41231290/how-to-display-current-year-in-flask-template) answered by [Davidism](https://stackoverflow.com/users/400617/davidism).
+
+- The code used to fade out the flash messages after 3 seconds was based on [**This**](https://stackoverflow.com/questions/31176402/how-to-hide-flash-message-after-few-seconds) answered by [Puja](https://stackoverflow.com/users/4985643/puja).
+
+- The code used to prevent the default click event from firing when the user clicks on the add ingredient or add method button was found [**here**](https://api.jquery.com/event.preventDefault/).
 
 #### Educational Credit
 
