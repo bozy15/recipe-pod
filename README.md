@@ -1,6 +1,6 @@
 # RecipePod
 
-View the live site [here]()
+View the live site [**here**](https://recipe-pod.herokuapp.com/)
 
 This is a site built for people who want to share their favorite recipes with others. It is a simple, easy to use, and free to use site. It is designed to be responsive on a wide range of devices.
 
@@ -346,6 +346,20 @@ The wireframes were created using [Balsamiq](https://balsamiq.com/) during the d
   - **Spell Right** was used to assist with spell checking.
 - [GitHub](https://github.com/)
   - This project used GitHub to store project code.
+- [Am I Responsive](http://ami.responsivedesign.is/#)
+	- Was used in this project to check responsive design and create the image located at the top of this file.
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/)
+	- This project used Flask to host the web app.
+- [Flask-PyMongo](https://flask-pymongo.readthedocs.io/en/latest/)
+	- This project used Flask-PyMongo to connect to MongoDB.
+- [BSON](https://docs.mongodb.com/manual/reference/bson-types/)
+	- This project used BSON to store data in MongoDB.
+- [MongoDB](https://www.mongodb.com/)
+	- This project used MongoDB to store data.
+- [Jinja](https://jinja.palletsprojects.com/)
+	- This project used Jinja to render the HTML.
+- [Werkzeug](http://werkzeug.palletsprojects.com/)
+	- This project used Werkzeug to create the web app security.
 
 ## Testing
 
@@ -391,6 +405,10 @@ This project was developed using [VScode](https://code.visualstudio.com/), commi
 
 ### Media
 
+- [Jamie Oliver](https://www.jamieoliver.com/) for using their sample recipes.
+
+- [BBCGoodFood](https://www.bbcgoodfood.com/) for using their sample recipes.
+
 - The color palette used for this project can be found [**here**](https://www.shutterstock.com/blog/color-palettes-for-websites).
 
 #### Images
@@ -415,7 +433,13 @@ This project was developed using [VScode](https://code.visualstudio.com/), commi
 
 #### Educational Credit
 
+- Code Institute's [Task Manager project](https://www.youtube.com/watch?v=Sfkg3358Igc) was used to help guide me through this project and help me understand how to create a web app.
+
 ### Acknowledgements
+
+- The team at [Code Institute](https://www.codecademy.com/) for their support and help in this project.
+
+- [Slack](https://slack.com/) for their support and help in this project.
 
 ### Content
 
