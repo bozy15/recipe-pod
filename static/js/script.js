@@ -58,9 +58,29 @@ $(document).ready(function () {
     e.preventDefault();
     $(this).parent().remove();
   });
-   // END OF ADD RECIPE FORM JS
+  // END OF ADD RECIPE FORM JS
 
   //  FLASH MESSAGES
   // Fades out the flash message after 3 seconds
   $("#flashes").delay(3000).fadeOut(200);
+
+  // Dont let user sign in if passwords don't match
+  $(function () {
+    $(".login-btn").click(function () {
+      let password = $("#password").val();
+      let confirmPassword = $("#confirm_password").val();
+      if (password !== confirmPassword) {
+        // Show error message
+        $("#error_message").html("Username and or Password are incorrect");
+        $("#error_message").fadeIn(200).delay(3000).fadeOut(200);
+        // Clear username and password fields
+        $("#username").val("");
+        $("#password").val("");
+        $("#confirm_password").val("");
+
+        return false;
+      }
+      return true;
+    });
+  });
 });
