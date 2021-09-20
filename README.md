@@ -203,6 +203,8 @@ This project was developed using [VScode](https://code.visualstudio.com/), commi
 
 - The code used to prevent the default click event from firing when the user clicks on the add ingredient or add method button was found [**here**](https://api.jquery.com/event.preventDefault/).
 
+- The code used to validate the login and register form was found  [**here**](https://www.aspsnippets.com/Articles/Password-and-Confirm-Password-validation-using-JavaScript-and-jQuery.aspx).
+
 #### Educational Credit
 
 ### Acknowledgements
