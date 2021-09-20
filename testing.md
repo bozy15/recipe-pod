@@ -17,6 +17,36 @@
 
 **All tests on laptop were repeated in Chrome and Firefox on two different screen sizes.**
 
+#### Testing Navigations
+
+**If the user is not logged in**
+
+- When you open the app, you should see the main page. [x]
+- Click on the "Home" button. You should see the home page. [x]
+- Click on the "Recipes" button. You should see the recipes page. [x]
+- Click on the "Register" button. You should see the register page. [x]
+- Click on the "Login" button. You should see the login page. [x]
+
+**If the user is logged in**
+
+ - When you open the app, you should see the main page. [x]
+ - Click on the "Home" button. You should see the home page. [x]
+ - Click on the "Recipes" button. You should
+ see the recipes page. [x]
+ - Click on the "Profile" button. You should see the profile page. [x]
+ - Click on the "Logout" button. You should see the login page. [x]
+
+ **If the user has admin permissions**
+
+ - When you open the app, you should see the main page. [x]
+ - Click on the "Home" button. You should see the home page. [x]
+ - Click on the "Recipes" button. You should see the recipes page. [x]
+ - Click on the "Profile" button. You should see the profile page. [x]
+ - Click on the "Manage Categories" button. You should see the manage categories page. [x]
+ - Click on the "Logout" button. You should see the login page. [x]
+
+
+
 ### Tests on Mobiles and tablets
 
 **All tests were performed on this developers Xiaomi mi 10 mobile device and iPad. All tests done on Laptop were performed on the mobile devices. Below are the specific tests for mobile devices.**
