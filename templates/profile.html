@@ -25,12 +25,12 @@
 <!-- End of Users displayed recipes -->
 
 <!-- Users recipes -->
-<section>
+<section class="text-shadow">
     <div class="container">
         <div class="row">
             <!-- If the user has no recipes display this message -->
             {% if recipes|length == 0 %}
-                <div class="col s12 center-align">
+                <div class="no-recipe-text col s12 center-align">
                     <p>Doesn't look like you have uploaded any recipes yet.</p>
                     <p>Whenever you feel ready just hit the button above!</p>
                 </div>

@@ -63,6 +63,19 @@ nav .brand-logo {
   margin: 0 0 0 1rem;
 }
 
+/* flash messages */
+#flashes {
+  position: absolute;
+  left: 26%;
+  top: 12%;
+  z-index: 1;
+  width: 50%;
+  background: #1e3950;
+  border: 2px solid #ffa101;
+  border-radius: 0.5rem;
+  color: #fff;
+}
+
 /* Footer */
 .page-footer.center {
   background-color: #1e3952;
@@ -183,8 +196,12 @@ label.search-recipes {
   padding-inline: 2rem;
 }
 
+img {
+  border-inline: 3px solid #1e3952;
+}
+
 .card .card-image img {
-  height: 25rem;
+  height: auto;
   border-bottom: 2px solid #1e3952;
 }
 
@@ -207,9 +224,40 @@ label.search-recipes {
 
 /* --- REGISTER.HTML CSS --- */
 /* Register button */
-.register-btn {
-  width: 25%; /* centers the register button */
-  margin-inline-start: 38%;
+.register-heading-row.row {
+  width: 40%; /* reduces the width of the background */
+}
+
+.register-heading {
+  font-weight: 200;
+  color: #fff;
+  margin-top: 7rem;
+  padding: 1.25rem;
+  font-size: 4rem;
+  background-color: #31525b;
+  opacity: 0.8;
+  border-radius: 8px;
+  box-shadow: 0px 0px 3px 1px black;
+}
+
+label.register-form {
+  color: white;
+  text-shadow: 1px 1px 2px #000000b3;
+  font-size: inherit;
+  padding-left: 1rem;
+}
+
+.register-row.row {
+  padding-top: 2rem;
+}
+
+.sign-in-text {
+  padding-top: 4rem;
+  padding-bottom: 1rem;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+  color: #fff;
 }
 /* --- END OF REGISTER.HTML CSS --- */
 
@@ -280,6 +328,12 @@ label.login-form {
   box-shadow: 0px 0px 3px 1px black;
 }
 
+.no-recipe-text.col.s12.center-align {
+  font-size: 1.75rem;
+  color: #fff;
+  padding: 4rem 0;
+}
+
 .my-recipe-row {
   width: 60%; /* Reduces the size of the background */
 }
@@ -300,5 +354,121 @@ label.login-form {
 }
 /* --- END OF PROFILE.HTML CSS --- */
 
+/* --- ADD_RECIPES.HTML & EDIT_RECIPES.HTML CSS --- */
+.add-heading-row.row {
+  width: 60%; /* Reduces the size of the background */
+}
+
+.add-heading {
+  font-weight: 200;
+  color: #fff;
+  margin-top: 7rem;
+  padding: 1.25rem;
+  font-size: 4rem;
+  background-color: #31525b;
+  opacity: 0.8;
+  border-radius: 8px;
+  box-shadow: 0px 0px 3px 1px black;
+}
+
+
+
+.form-padding {
+  padding-inline: 2rem;
+}
+
+.add-recipe-form.card-panel {
+  border-radius: 6px;
+  border: 2px solid #1e395d;
+  font-family: "Poppins";
+  background-color: #b3dee5e8;
+  color: #fff;
+  font-weight: initial;
+  padding-inline: 2rem;
+}
+
+.select-wrapper input.select-dropdown {
+  text-shadow: 1px 1px 2px #000000b3;
+  color: #fff;
+}
+
+label.add-recipe {
+  color: white;
+  text-shadow: 1px 1px 2px #000000b3;
+  font-size: inherit;
+  padding-left: 1rem;
+}
+
+.add-recipe-btn {
+  border: 1px solid #1e3952;
+  background-color: #ffa101;
+}
+
+.add-recipe-btn:hover {
+  background-color: #1e3952;
+}
+
+#recipe_name, /* styles the placeholder text on the edit recipe page */
+#image_url,
+#prep_time,
+#serves,
+#ingredients,
+#method {
+  padding-left: 1rem;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000000b3;
+}
+/* Category dropdown */
+.select-dropdown li.disabled, .select-dropdown li.disabled > span, .select-dropdown li.optgroup {
+  color: #fff;
+  background-color: #ffa101;
+}
+
+.dropdown-content {
+  background-color: #1e3952b3;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+  color: #fff;
+}
+/* --- END OF ADD_RECIPES.HTML & EDIT_RECIPES.HTML CSS --- */
+
 /* --- FULL_RECIPE.HTML CSS --- */
-/* recipe image card */
+.full-recipe-heading-row.row {
+  width: 60%; /* Reduces the size of the background */
+}
+
+.full-recipe-heading {
+  font-weight: 200;
+  color: #fff;
+  margin-top: 7rem;
+  padding: 1.25rem;
+  font-size: 4rem;
+  background-color: #31525b;
+  opacity: 0.8;
+  border-radius: 8px;
+  box-shadow: 0px 0px 3px 1px black;
+}
+
+.full-recipe-card.card.center-align,
+.full-recipe-card.card.row {
+  margin-inline: auto;
+  font-size: 1.25rem;
+}
+
+.center-align.card-title {
+  border: 2px solid #1e3952;
+  border-radius: 8px;
+  padding: .75rem;
+}
+
+.full-recipe-content {
+  display: list-item;
+}
+
+/* Max width for mobile screens */
+@media screen and (min-width: 768px) {
+  .form-padding {
+    padding-inline: 10rem;
+  }
+}

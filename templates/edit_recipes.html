@@ -2,16 +2,16 @@
 {% extends "base.html" %}
 {% block content %}
     <!-- Heading -->
-    <div class="row">
+    <div class="text-shadow add-heading-row row">
         <div class="col s12">
-            <h3 class="center-align">Edit Recipe</h3>
+            <h3 class="add-heading center-align">Edit Recipe</h3>
         </div>
     </div>
     <!-- Add Recipe form -->
-    <section class="valign-wrapper">
-        <div class="row">
+    <section class="text-shadow">
+        <div class="form-padding">
             <form class="col s12 text-shadow" action="{{ url_for('edit_recipes', recipe_id=recipe._id) }}" method="POST">
-                <div class="card-panel">
+                <div class="add-recipe-form card-panel">
                     <!-- Recipe category dropdown -->
                     <div class="row">
                         <div class="input-field col s12">
@@ -28,7 +28,7 @@
                                     {% endif %}
                                 {% endfor %}
                             </select>
-                            <label for="category_name">Recipe Category</label>
+                            <label class="add-recipe" for="category_name">Recipe Category</label>
                         </div>
                     </div>
                     <!-- End of dropdown -->
@@ -38,7 +38,7 @@
                             <i class="fas fa-pencil-alt prefix"></i>
                             <input type="text" id="recipe_name" name="recipe_name" minlength="4" maxlength="30"
                                 class="validate" value="{{ recipe.recipe_name }}" required>
-                            <label for="recipe_name">Recipe's Name</label>
+                            <label class="add-recipe" for="recipe_name">Recipe's Name</label>
                         </div>
                     </div>
                     <!-- End of Recipe name input -->
@@ -47,7 +47,7 @@
                         <div class="input-field col s12">
                             <i class="fas fa-link prefix"></i>
                             <input type="url" id="image_url" name="image_url" class="validate" value="{{ recipe.image_url }}" required>
-                            <label for="image_url">Recipe's Image URL</label>
+                            <label class="add-recipe" for="image_url">Recipe's Image URL</label>
                         </div>
                     </div>
                     <!-- End of Recipe image URL link -->
@@ -57,7 +57,7 @@
                             <i class="fas fa-clock prefix"></i>
                             <input type="text" id="prep_time" name="prep_time" class="validate" value="{{ recipe.prep_time }}"
                                 required>
-                            <label for="prep_time">Time to make</label>
+                            <label class="add-recipe" for="prep_time">Time to make</label>
                         </div>
                     </div>
                     <!-- End of time to make -->
@@ -66,7 +66,7 @@
                         <div class="input-field col s12">
                             <i class="fas fa-users prefix"></i>
                             <input type="text" id="serves" name="serves" class="validate" value="{{ recipe.serves }}" required>
-                            <label for="serves">Serves</label>
+                            <label class="add-recipe" for="serves">Serves</label>
                         </div>
                     </div>
                     <!-- End of Serves -->
@@ -79,7 +79,7 @@
                             <input type="text" id="ingredients" name="ingredients" class="validate" minlength="3" maxlength="500" value="{{ ingredient }}" required />
                             <!-- Stops the label printing every time the loop runs -->
                             {% if loop.index == 1 %}
-                                <label for="ingredients">Ingredients</label>
+                                <label class="add-recipe" for="ingredients">Ingredients</label>
                             {% endif %}
                             <!-- If there is more than one ingredient -->
                             {% if loop.index != 1 %}
@@ -106,7 +106,7 @@
                                     maxlength="600" required>{{ method }}</textarea>
                                 <!-- Stops the label printing every time the loop runs -->
                                 {% if loop.index == 1 %}
-                                    <label for="method">Method</label>
+                                    <label class="add-recipe" for="method">Method</label>
                                 {% endif %}
                                 <!-- If there is more than one method -->
                                 {% if loop.index != 1 %}
@@ -126,12 +126,12 @@
                     <!-- End of Method -->
                     <!-- Reset button -->
                     <div class="row valign-wrapper">
-                        <div class="col s12">
-                            <a href="{{ url_for('edit_recipes', recipe_id=recipe._id) }}" class="btn red text-shadow">Reset</a>
+                        <div class="col right-align s12">
+                            <a href="{{ url_for('edit_recipes', recipe_id=recipe._id) }}" class="btn waves-effect waves-light red text-shadow">Reset</a>
                         </div>
                         <!-- Add Recipe button -->
-                        <div class="col s12 center-align">
-                            <button class="btn green text-shadow" type="submit" name="add_recipe">Edit Recipe</button>
+                        <div class="col s12">
+                            <button class="add-recipe-btn btn text-shadow" type="submit" name="add_recipe">Edit Recipe</button>
                         </div>
                     </div>
 

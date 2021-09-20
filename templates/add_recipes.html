@@ -2,28 +2,28 @@
 {% extends "base.html" %}
 {% block content %}
     <!-- Heading -->
-    <div class="row">
+    <div class="text-shadow add-heading-row row">
         <div class="col s12">
-            <h3 class="center-align">Add a Recipe</h3>
+            <h3 class="add-heading center-align">Add a Recipe</h3>
         </div>
     </div>
     <!-- Add Recipe form -->
-    <section class="valign-wrapper">
-        <div class="row">
+    <section class="text-shadow">
+        <div class="form-padding">
             <form class="col s12 text-shadow" action="{{ url_for('add_recipes') }}" method="POST">
-                <div class="card-panel">
+                <div class="add-recipe-form card-panel">
                     <!-- Recipe category dropdown -->
                     <div class="row">
                         <div class="input-field col s12">
-                            <i class="fas fa-folder-open prefix"></i>
-                            <select name="category_name" id="category_name" class="validate" required>
+                            <i class="fas fa-folder-open prefix white-text"></i>
+                            <select name="category_name" id="category_name" class="validate white-text text-shadow" required>
                                 <option value="" disabled selected>Choose category</option>
                                 <!-- For loop that generates the options -->
                                 {% for category in categories %}   
                                     <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                                 {% endfor %}
                             </select>
-                            <label for="category_name">Recipe Category</label>
+                            <label class="add-recipe" for="category_name">Recipe Category</label>
                         </div>
                     </div>
                     <!-- End of dropdown -->
@@ -33,7 +33,7 @@
                             <i class="fas fa-pencil-alt prefix"></i>
                             <input type="text" id="recipe_name" name="recipe_name" minlength="4" maxlength="30"
                                 class="validate" required>
-                            <label for="recipe_name">Recipe's Name</label>
+                            <label class="add-recipe" for="recipe_name">Recipe's Name</label>
                         </div>
                     </div>
                     <!-- End of Recipe name input -->
@@ -42,7 +42,7 @@
                         <div class="input-field col s12">
                             <i class="fas fa-link prefix"></i>
                             <input type="url" id="image_url" name="image_url" class="validate" required>
-                            <label for="image_url">Recipe's Image URL</label>
+                            <label class="add-recipe" for="image_url">Recipe's Image URL</label>
                         </div>
                     </div>
                     <!-- End of Recipe image URL link -->
@@ -52,7 +52,7 @@
                             <i class="fas fa-clock prefix"></i>
                             <input type="text" id="prep_time" name="prep_time" class="validate"
                                 required>
-                            <label for="prep_time">Time to make</label>
+                            <label class="add-recipe" for="prep_time">Time to make</label>
                         </div>
                     </div>
                     <!-- End of time to make -->
@@ -61,7 +61,7 @@
                         <div class="input-field col s12">
                             <i class="fas fa-users prefix"></i>
                             <input type="text" id="serves" name="serves" class="validate" required>
-                            <label for="serves">Serves</label>
+                            <label class="add-recipe" for="serves">Serves</label>
                         </div>
                     </div>
                     <!-- End of Serves -->
@@ -70,7 +70,7 @@
                         <div class="input-field col s12">
                             <i class="fas fa-list prefix"></i>
                             <input type="text" id="ingredients" name="ingredients" class="validate" minlength="3" maxlength="500" required />
-                            <label for="ingredients">Ingredients</label>
+                            <label class="add-recipe"  for="ingredients">Ingredients</label>
                         </div>
                     </div>
                     <!-- Add a New Ingredient -->
@@ -87,7 +87,7 @@
                             <i class="fas fa-list-ol prefix"></i>
                             <textarea name="method" id="method" rows="2" class="materialize-textarea validate" minlength="3"
                                 maxlength="600" required></textarea>
-                            <label for="method">Method</label>
+                            <label class="add-recipe" for="method">Method</label>
                         </div>
                     </div>
                     <!-- Add another step -->
@@ -100,13 +100,13 @@
                     <!-- End of Method -->
                     <!-- Reset button -->
                     <div class="row valign-wrapper">
-                        <div class="col s12">
-                            <a href="{{ url_for('add_recipes') }}" class="btn red text-shadow">Reset</a>
+                        <div class="col right-align s12">
+                            <a href="{{ url_for('add_recipes') }}" class="btn red waves-effect waves-light text-shadow">Reset</a>
                         </div>
                     <!-- End of reset button -->
                         <!-- Add Recipe button -->
-                        <div class="col s12 center-align">
-                            <button class="btn green text-shadow" type="submit" name="add_recipe">Add Recipe</button>
+                        <div class="col s12">
+                            <button class="add-recipe-btn waves-effect waves-light btn text-shadow" type="submit" name="add_recipe">Add Recipe</button>
                         </div>
                     </div>      
                 </div>
