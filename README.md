@@ -4,7 +4,9 @@ View the live site [here]()
 
 This is a site built for people who want to share their favorite recipes with others. It is a simple, easy to use, and free to use site. It is designed to be responsive on a wide range of devices.
 
-_Image of the site_
+<div align="center">
+  	<img src="static/images/responsive-images.png" />
+  </div>
 
 ## Table of Contents
 
@@ -112,7 +114,7 @@ MongoDB is used to store the data for this website. The data has been set in 3 c
 #### Recipes Collection
 
 - **recipes**: This collection stores the recipes information.
-  - When a recipe is created, the _recipe_name_, _category_name_, _ingredients_, _method_, _number of serves_, _image_url_ and _created_by_ are stored here.
+  - When a recipe is created, the _recipe_name_, _category_name_, _ingredients_, _method_, _number of serves_, _image_URL and _created_by_ are stored here.
 
 #### Categories Collection
 
@@ -183,15 +185,156 @@ The wireframes were created using [Balsamiq](https://balsamiq.com/) during the d
 		<img src="static/images/profile-norecipe.png" />
 </div>
 
+**Full Recipe page**
+
+- The full recipe page is a page that displays the recipe name, category, ingredients, method, number of serves, and an image of the recipe.
+- A button to navigate to the recipe edit page if the user had created the recipe.
+- A button to delete the recipe if the user had created the recipe.
+
+
+<div align="center">
+		<img src="static/images/full-recipe1.png" />
+</div>
+<div align="center">
+		<img src="static/images/full-recipe2.png" />
+</div>
+
+**Recipes page**
+
+ - The recipes page is a page that displays a list of recipes that have been created by any user created.
+
+ - A search bar to search for recipes and a reset button to clear the search field.
+
+ - A button to navigate to see the selected recipe.
+
+ <div align="center">
+		<img src="static/images/recipe-ss.png" />
+</div>
+
+**Add Recipe page**
+
+ - The add recipe page is a page that displays a form to add a recipe.
+
+- A form will be displayed with the following fields:
+  - recipe name
+  - category
+  - ingredients
+  - method
+  - prep time
+  - number of serves
+  - image URL
+
+ - Below both the ingredients and method fields is a button to add another ingredient or method.
+ - After more that one method or ingredient is added, the user has the option to delete the extra ingredient or method.
+
+ - At the bottom of the form is a button to submit the form and a button to cancel to clear the fields.
+
+ <div align="center">
+		<img src="static/images/add-recipe.png" />
+</div>
+<div align="center">
+		<img src="static/images/add-recipe2.png" />
+</div>
+
+**Edit Recipe**
+
+- The edit recipe page is a page that displays a form to edit a recipe.
+**Note:** The user can only edit their own recipes.
+
+ - A form will be displayed with the following fields:
+  - recipe name
+  - category
+  - ingredients
+  - method
+  - prep time
+  - number of serves
+  - image URL
+
+ - Below both the ingredients and method fields is a button to add another ingredient or method.
+
+ - When one or more method or ingredient is entered, the user has the option to delete the extra ingredient or method.
+
+ - At the bottom of the form is a button to submit the form and a button to cancel to reset the fields.
+
+ <div align="center">
+		<img src="static/images/add-recipe2.png" />
+</div>
+<div align="center">
+		<img src="static/images/edit-recipe.png" />
+</div>
+
+**Delete a Recipe**
+
+ - Allows the user to delete a recipe they have created.
+
+  - A modal will be displayed with a message that the recipe will be deleted.
+  - A button to confirm the delete.
+  - A button to cancel the delete and close the modal.
+
+  <div align="center">
+		<img src="static/images/delete-recipe.png" />
+</div>
+
+**Manage Categories**
+- If the user have admin permissions, they will be able to manage categories.
+- The user has the ability to add, edit, and delete categories.
+- The user has the ability to see a list of all categories.
+- There is be a button to add a new category.
+
+<div align="center">
+		<img src="static/images/manage-categories.png" />
+</div>
+
+**Add a Category**
+
+- The add category page is a page that displays a form to add a category.
+
+ - A form will be displayed with the following fields:
+  - category name
+
+ - At the bottom of the form is a button to submit the form and a button to cancel to clear the fields.
+
+<div align="center">
+		<img src="static/images/add-category.png" />
+</div>
+
+**Edit a Category**
+
+ - The edit category page is a page that displays a form to edit a category.
+
+ - A form will be displayed with the following fields:
+  - category name
+
+ - At the bottom of the form is a button to submit the form and a button to cancel to redirect to manage categories.
+
+ <div align="center">
+		<img src="static/images/edit-category.png" />
+</div>
+
+**Delete a Category**
+
+ - Allows the user to delete a category they have created.
+
+  - A modal will be displayed with a message that the category will be deleted.
+  - A button to confirm the delete.
+  - A button to cancel the delete and close the modal.
+
+<div align="center">
+		<img src="static/images/delete-category.png" />
+</div>
+
 
 ### Features to Implement
+
+- [x] Ability to delete a user.
+- [x] Connect users to an email API to send newsletters.
 
 ## Technologies Used
 
 - This project used HTML5, CSS3 and JavaScript.
 - [jQuery](https://jquery.com/)
   - Used in this project to simplify manipulation of the DOM.
-- [BootStrap](https://getbootstrap.com/docs/4.6/getting-started/introduction/)
+- [Materialize](https://materializecss.com/)
   - Used to simplify the structure of this project and assist in responsiveness.
 - [FontAwesome](https://fontawesome.com/)
   -Used in this project to place icons on the mute button.

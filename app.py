@@ -1,7 +1,8 @@
 # imports
 import os
 from datetime import datetime
-from flask import Flask, flash, render_template, request, session, url_for, redirect
+from flask import (Flask, flash, render_template, request, session, url_for,
+                   redirect)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from pymongo.message import query
@@ -29,10 +30,13 @@ def inject_now():
     return dict(now=datetime.utcnow())
 
 
-# Error handling: source: https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
+# Error handling:
+# source:
+# https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("error404.html"), 404
+
 
 @app.errorhandler(500)
 def internal_server_error(e):
@@ -74,8 +78,7 @@ def login():
             if check_password_hash(existing_user["password"],
                                    request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                user = mongo.db.users.find_one(
-                    {"username": session["user"]})
+                user = mongo.db.users.find_one({"username": session["user"]})
                 # check if user is admin
                 if user["is_admin"]:
                     session["is_admin"] = True
@@ -180,9 +183,10 @@ def add_recipes():
 @app.route("/edit_recipes/<recipe_id>", methods=["GET", "POST"])
 def edit_recipes(recipe_id):
     # Grabs recipe from database
-    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    recipe = mongo.db.recipes.find_one(
+        {"_id": ObjectId(recipe_id)})
     if request.method == "POST":
-        # Grabs the recipe details from the form and stores them in a dictionary
+        # Grabs the recipe details from the form
         recipe_details = {
             "recipe_name": request.form.get("recipe_name"),
             "category_name": request.form.get("category_name"),
@@ -240,7 +244,7 @@ def manage_categories():
 @app.route("/add_category", methods=["GET", "POST"])
 def add_category():
     if request.method == "POST":
-        # Grabs the category details from the form and stores them in a dictionary
+        # Grabs the category details from the form
         category_details = {"category_name": request.form.get("category_name")}
         # Inserts the category into the database
         mongo.db.categories.insert_one(category_details)
@@ -255,7 +259,7 @@ def edit_category(category_id):
     # Grabs the category from the database
     category = mongo.db.categories.find_one({"_id": ObjectId(category_id)})
     if request.method == "POST":
-        # Grabs the category details from the form and stores them in a dictionary
+        # Grabs the category details from the form
         category_details = {"category_name": request.form.get("category_name")}
         # Updates the category in the database
         mongo.db.categories.update({"_id": ObjectId(category_id)},
@@ -279,4 +283,4 @@ def delete_category(category_id):
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=int(os.environ.get('PORT')),
-            debug=True)
+            debug=False)
