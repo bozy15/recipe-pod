@@ -585,6 +585,31 @@ p a:hover {
   .manage-heading {
     font-size: 2rem;
   }
+/* recipe heading */
+  .recipe-heading-row.row {
+    width: 60%; /* Reduces the width of the background */
+  }
+
+  .recipe-heading.center-align {
+    font-size: 2rem;
+  }
+/* profile heading */
+  .my-recipe-row.text-shadow.row {
+    width: 60%; /* Reduces the width of the background */
+  }
+
+  .my-recipe-heading.center-align {
+    font-size: 2rem;
+  }
+
+  /* Full recipe heading */
+  .full-recipe-heading-row.row {
+    width: 60%; /* Reduces the width of the background */
+  }
+
+  .full-recipe-heading.center-align {
+    font-size: 2rem;
+  }
 
   /* error404.html & error500.html */
   .login-heading {

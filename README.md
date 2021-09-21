@@ -440,6 +440,12 @@ This project was developed using [VScode](https://code.visualstudio.com/), commi
 
 - [Slack](https://slack.com/) for their support and help in this project.
 
+## For the Assessor
+When the CI Assessor would like to sign in to the web app as admin, They can do so with the following username and password.
+
+   - Username: bozy
+   - Password: testingms3
+
 ### Content
 
 - All text was written by Emmett Becirovic.
