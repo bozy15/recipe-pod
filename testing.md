@@ -45,15 +45,83 @@
 - [x] Click on the "Manage Categories" button. You should see the manage categories page.
 - [x] Click on the "Logout" button. You should see the login page.
 
+#### Testing Buttons
 
+- [x] Click on the Register button. You should see the register page. *Only if user isn't logged in*
+- [x] Click on the Login button. You should see the login page. *Only if user isn't logged in*
+- [x] Click on the Logout button. You should logout. *Only if user is logged in*
+- [x] Click on the "Add Recipe" button. You should see the add recipe page. *Only if user is logged in*
+- [x] Click on the "Add Category" button. You should see the add category page. *Only if user is admin*
+- [x] Click on the "Manage Categories" button. You should see the manage categories page. *Only if user is admin*
+- [x] Click on the "Profile" button. You should see the profile page. *Only if user is logged in*
+- [x] Click on the "Reset Button" button. it should should refresh the page or redirect back to the previous page.
+- [x] Click on  the "See full recipe" button. You should see the full recipe page.
+- [x] Click on the "Edit Recipe" button. You should see the edit recipe page.
+- [x] Click on the "Delete Recipe" button. You should see a modal pop up and ask to confirm deletion.
+- [x] Click on the "Delete Category" button. You should see a modal pop up and ask to confirm deletion.
+- [x] Click on the "Edit Category" button. You should see the edit category page.
+
+#### Testing Forms
+
+**Register Form**
+- [x] If the user tries to register without entering a username, the form should not be submitted.
+- [x] If the user tries to register without entering a password, the form should not be submitted.
+- [x] If the user tries to register without entering a password confirmation, the form should not be submitted.
+- [x] If the user tries to register with a password confirmation that doesn't match the password, the form should not be submitted.
+
+**Login Form**
+- [x] If the user tries to login without entering a username, the form should not be submitted.
+- [x] If the user tries to login without entering a password, the form should not be submitted.
+- [x] If the user tries to login with a password that doesn't match the password, the form should not be submitted.
+- [x] If the user tries to login with a username that doesn't exist, the form should not be submitted.
 
 ### Tests on Mobiles and tablets
 
-**All tests were performed on this developers Xiaomi mi 10 mobile device and iPad. All tests done on Laptop were performed on the mobile devices. Below are the specific tests for mobile devices.**
+**All tests were performed on this developers Xiaomi mi 10 mobile device and iPad. All tests done on Laptop were performed on the mobile devices.**
 
 ## Client Stories Tests
 
 #### As a user, I want:
+- **to be able to navigate easily between the different pages of the app**
+    - [x] The fixed navigation bar is clearly visible on all the pages and has the correct links.
+
+- **See the list of recipes**
+    - [x] I can see the list of recipes on the recipe page and also via the search bar.
+
+- **See the details of a recipe**
+    - [x] I can see the details of a recipe on the full recipe page.
+
+- **Search for recipes**
+    - [x] I can search for recipes by name, ingredients, and who created them.
+
+- **Register to create a new account**
+    - [x] I can register to create a new account on the register page.
+
+#### As a registered user, I want:
+- **to be able to login to my account**
+    - [x] I can login to my account on the login page.
+
+- **to be able to logout of my account**
+    - [x] I can logout of my account with the logout button.
+
+- **Be able too create a new recipe**
+    - [x] I can create a new recipe on the add recipe page.
+
+- **Be able to edit my own recipes**
+    - [x] I can edit my own recipes on the edit recipe page.
+
+- **Be able to delete my own recipes**
+    - [x] I can delete my own recipes with the delete button.
+
+#### As an admin, I want:
+- **to be able to manage categories of recipes**
+    - [x] I can manage categories of recipes on the manage categories page.
+    - [x] I can add a new category on the add category page.
+    - [x] I can edit a category on the edit category page.
+    - [x] I can delete a category on the delete category page.
+
+
+
 
 ## Automated Tests
 
@@ -61,7 +129,14 @@ These were the validation services use to check the projects code.
 
 - [W3C Markup Validation](https://validator.w3.org/) was used to check the HTML.
 - [W3C CSS Validation](https://jigsaw.w3.org/css-validator/) was used to check the CSS.
-- [JSHint](https://jshint.com/) was used to check the JavaScript
+- [JSHint](https://jshint.com/) was used to check the JavaScript.
+- [PEP8](https://www.python.org/dev/peps/pep-0008/) was used to check the Python.
+- [Google Lighthouse](https://developers.google.com/web/tools/lighthouse/) was used to check the performance.
+
+<div align="center">
+  <img src="static/images/google-lighthouse.png" alt="W3C Markup Validation">
+</div>
+
 
 ## Bugs
 

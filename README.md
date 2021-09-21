@@ -70,9 +70,8 @@ As a registered user I want to be able to:
 
 In addition to the above user goals, I want to be able to:
 
-- Edit any recipe.
-- Delete any recipe.
 - Create a new category.
+- Edit a category.
 - Delete a category.
 
 #### Developer Goals
